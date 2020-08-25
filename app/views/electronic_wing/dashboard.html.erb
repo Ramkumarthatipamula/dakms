@@ -1,3 +1,5 @@
+<h3>Dashboard - Approve / Reject - Uploaded Activities / Projects</h3>
+
 <div class="table-responsive">
   <table id="static-table" class="table table-striped table-hover dt-responsive display nowrap " cellspacing="0">
     <thead>
@@ -8,19 +10,19 @@
         <th>Location</th>
         <th>Username</th>
         <th>Password</th>
-        <th>Manage</th>
+        <th>Address</th>
       </tr>
     </thead>
     <tbody>
       <% @users.each_with_index do |user, index| %>
         <tr>
           <td><%= index+1 %></td>
-          <td><%= user.institute_centre_type %></td>
           <td><%= user.institute_centre_name %></td>
+          <td><%= user.institute_centre_type %></td>
           <td><%= user.location %></td>
           <td><%= user.name %></td>
           <td><%= user.pwd %></td>
-          <td><%= link_to 'Edit', edit_institute_path(user), class: 'btn btn-info' %></td>
+          <td><%= user.address %></td>
         </tr>
       <% end %>
     </tbody>
