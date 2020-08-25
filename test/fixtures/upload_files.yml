@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  upload_type: MyString
+  name: MyString
+  title: MyString
+  description: MyString
+  location: MyString
+  date: 2020-08-25 23:24:46
+  scientist_name: MyString
+  scientist_id: MyString
+  status: MyString
+  archive: false
+  upload_data_id: 1
+  institute_id: 1
+
+two:
+  upload_type: MyString
+  name: MyString
+  title: MyString
+  description: MyString
+  location: MyString
+  date: 2020-08-25 23:24:46
+  scientist_name: MyString
+  scientist_id: MyString
+  status: MyString
+  archive: false
+  upload_data_id: 1
+  institute_id: 1

@@ -10,6 +10,9 @@ class ElectronicWingController < ApplicationController
 
   def dashboard
     @users = User.where(type: "Institute")
+    if params[:type].present? && params[:user_id].present?
+      @upload_files = UploadFile.all
+    end
   end
 
 end

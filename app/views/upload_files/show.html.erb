@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Upload type:</strong>
+  <%= @upload_file.upload_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @upload_file.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @upload_file.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @upload_file.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @upload_file.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @upload_file.date %>
+</p>
+
+<p>
+  <strong>Scientist name:</strong>
+  <%= @upload_file.scientist_name %>
+</p>
+
+<p>
+  <strong>Scientist:</strong>
+  <%= @upload_file.scientist_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @upload_file.status %>
+</p>
+
+<p>
+  <strong>Archive:</strong>
+  <%= @upload_file.archive %>
+</p>
+
+<p>
+  <strong>Upload data:</strong>
+  <%= @upload_file.upload_data_id %>
+</p>
+
+<p>
+  <strong>Institute:</strong>
+  <%= @upload_file.institute_id %>
+</p>
+
+<%= link_to 'Edit', edit_upload_file_path(@upload_file) %> |
+<%= link_to 'Back', upload_files_path %>

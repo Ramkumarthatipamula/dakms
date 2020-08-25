@@ -1,0 +1,77 @@
+<%= form_with(model: upload_file, local: true) do |form| %>
+  <% if upload_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(upload_file.errors.count, "error") %> prohibited this upload_file from being saved:</h2>
+
+      <ul>
+      <% upload_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :upload_type %>
+    <%= form.text_field :upload_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scientist_name %>
+    <%= form.text_field :scientist_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scientist_id %>
+    <%= form.text_field :scientist_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :archive %>
+    <%= form.check_box :archive %>
+  </div>
+
+  <div class="field">
+    <%= form.label :upload_data_id %>
+    <%= form.number_field :upload_data_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :institute_id %>
+    <%= form.number_field :institute_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

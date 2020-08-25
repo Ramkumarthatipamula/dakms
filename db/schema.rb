@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_152424) do
+ActiveRecord::Schema.define(version: 2020_08_25_175446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "upload_files", force: :cascade do |t|
+    t.string "upload_type"
+    t.string "name"
+    t.string "title"
+    t.string "description"
+    t.string "location"
+    t.datetime "date"
+    t.string "scientist_name"
+    t.string "scientist_id"
+    t.string "status", default: "Pending"
+    t.boolean "archive"
+    t.integer "upload_data_id"
+    t.integer "institute_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string "upload_type"
+    t.string "name"
+    t.string "title"
+    t.string "description"
+    t.string "location"
+    t.datetime "date"
+    t.string "scientist_name"
+    t.string "scientist_id"
+    t.string "status", default: "Pending"
+    t.boolean "archive"
+    t.integer "upload_data_id"
+    t.integer "institute_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
