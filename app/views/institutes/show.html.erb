@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @institute.name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @institute.password %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @institute.email %>
+</p>
+
+<p>
+  <strong>Mobile number:</strong>
+  <%= @institute.mobile_number %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @institute.phone_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @institute.address %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @institute.designation %>
+</p>
+
+<p>
+  <strong>Institute name:</strong>
+  <%= @institute.institute_centre_name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @institute.location %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @institute.institute_centre_type %>
+</p>
+
+<%= link_to 'Edit', edit_institute_path(@institute) %> |
+<%= link_to 'Back', admin_manage_path %>

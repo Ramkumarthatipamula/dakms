@@ -1,0 +1,75 @@
+<%= form_with(model: institute, local: true) do |form| %>
+  <% if institute.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(institute.errors.count, "error") %> prohibited this institute from being saved:</h5>
+
+      <ul>
+      <% institute.errors.full_messages.each do |message| %>
+        <li><p class="alert alert-danger"><%= message %></p></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Institute / Centre" %>
+    <%= form.text_field :institute_centre_name, :class => 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Institute / Centre Type" %>
+    <%= form.select(:institute__centre_type, [ '', 'KVK/DAATTC', 'RARS', "Colleges" ], {}, { :class => 'form-control' }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, :class => 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, :class => 'form-control' %>
+  </div>
+
+  <!-- <div class="field">
+    <%#= form.label :address %>
+    <%#= form.text_field :address %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label "Username" %>
+    <%= form.text_field :name, :class => 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, :class => 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, :class => 'form-control' %>
+  </div><br>
+
+
+  <!-- <div class="field">
+    <%#= form.label :mobile_number %>
+    <%#= form.text_field :mobile_number, class: "form-control" %>
+  </div> -->
+
+  <!-- <div class="field">
+    <%#= form.label :phone_number %>
+    <%#= form.text_field :phone_number %>
+  </div> -->
+
+
+  <!-- <div class="field">
+    <%#= form.label :designation %>
+    <%#= form.text_field :designation %>
+  </div> -->
+
+
+  <div class="actions text-centre">
+    <%= form.submit class: "btn btn-info" %>
+  </div>
+<% end %>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DAKMS</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <script>
+    $(document).ready(function(){
+      $(".hamburger").click(function(){
+        alert('ram')
+        $(".wrapper").toggleClass("active")
+      })
+    });
+    </script>
+    <%#= javascript_include_tag 'https://kit.fontawesome.com/b99e675b6e.js', 'data-turbolinks-track': 'reload' %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <% if user_signed_in? %>
+      <% if current_user.type == 'Admin' %>
+        <%= render "layouts/admin" %>
+      <% elsif current_user.type == 'ElectronicWing' %>
+        <%= render "layouts/electronic_wing" %>
+      <% elsif current_user.type == 'Institute' %>
+        <%= render "layouts/institute" %>
+      <% elsif current_user.type == 'SuperAdmin' %>
+        <%= render "layouts/super_admin" %>
+      <% end %>
+    <% else %>
+      <%= yield %>
+    <% end %>
+  </body>
+</html>

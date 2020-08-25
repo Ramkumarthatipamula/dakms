@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_of_treatments: MyString
+  no_of_samples: MyString
+  analytical_type: MyString
+
+two:
+  no_of_treatments: MyString
+  no_of_samples: MyString
+  analytical_type: MyString

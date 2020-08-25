@@ -1,0 +1,98 @@
+development:
+  adapter: postgresql
+  host: "localhost"
+  username: "root123"
+  password: "root"
+  database: dakms_dev
+  reconnect: true
+  pool: 10
+  timeout: 5000
+# development:
+#   adapter: postgresql
+#   host: "bdabd0da-62c1-4e97-b26c-e7d3e3c7433a.c437f5ab8b3840e99a1a93dffcce078d.databases.appdomain.cloud"
+#   username: "ibm_cloud_5619f429_11a0_433b_8393_bdbd30e27261"
+#   password: "62f4aff49f3ae144e0b327c7cb605d1e61c61e474261665cf29e475b2bb8c614"
+#   database: ibmclouddb
+#   port: 30591
+#   reconnect: true
+#   pool: 10
+#   timeout: 5000
+  # adapter: postgresql
+  # host: "139.99.57.72"
+  # username: "eduwonka"
+  # password: "BjxhZOhJh6ci"
+  # database: edu_wonka_production
+  # port: 5432
+  # reconnect: true
+  # pool: 10
+  # timeout: 5000
+
+test:
+  adapter: postgresql
+  host: "localhost"
+  username: "root123"
+  password: "root"
+  database: dakms_test
+  reconnect: true
+  pool: 10
+  timeout: 5000
+
+# old production database added to staging
+staging:
+  adapter: postgresql
+  host: "localhost"
+  username: "root123"
+  password: "root"
+  database: dakms_dev_staging
+  reconnect: true
+  pool: 10
+  timeout: 5000
+
+
+# old staging
+# staging:
+#   adapter: postgresql
+#   host: "104.237.2.219"
+#   username: "eduwonka"
+#   password: "BjxhZOhJh6ci"
+#   database: edu_wonka_staging
+#   port: 5432
+#   reconnect: true
+#   pool: 10
+#   timeout: 5000
+
+# old production
+# production:
+#   adapter: postgresql
+#   host: "139.99.57.72"
+#   username: "eduwonka"
+#   password: "BjxhZOhJh6ci"
+#   database: edu_wonka_production
+#   port: 5432
+#   reconnect: true
+#   pool: 10
+#   timeout: 5000
+
+# Google cloud db
+# production:
+#   adapter: postgresql
+#   host: "35.200.220.99"
+#   username: "eduwonka"
+#   password: "BjxhZOhJh6ci"
+#   database: edu_wonka_production
+#   port: 5432
+#   reconnect: true
+#   pool: 10
+#   timeout: 5000
+
+
+# Production IBM
+production:
+  adapter: postgresql
+  host: "localhost"
+  username: "root123"
+  password: "root"
+  database: dakms_production
+  reconnect: true
+  pool: 10
+  timeout: 5000

@@ -1,0 +1,79 @@
+<div class="container-fluid bg-white">
+  <br>
+  <div class="row">
+    <div class="col-12 text-center">
+      <img src="/assets/download.jpeg" height="100px" width="100px">
+      <span class="header-style"> &nbsp;Digital Agriculture Knowledge Management System(DAKMS)</span>
+    </div>
+  </div><br>
+
+  <div class="row row-fixed-height">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://source.unsplash.com/szFUQoyvrxM/1920x1080" alt="Los Angeles" width="100%" height="200">
+              </div>
+              <div class="carousel-item">
+                <img src="https://source.unsplash.com/bF2vsubyHcQ/1920x1080" alt="Chicago" width="100%" height="200">
+              </div>
+              <div class="carousel-item">
+                <img src="https://source.unsplash.com/LAaSoL0LrYs/1920x1080" alt="New York" width="100%" height="200">
+              </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card" style="height: 534px;">
+        <div class="card-body">
+          <h2>Log in</h2>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+            </div><br>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+            </div>
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%#= f.check_box :remember_me %>
+                <%#= f.label :remember_me %>
+              </div>
+            <% end %>
+            <div class="actions text-center">
+              <br>
+              <%= f.submit "Log in", class: 'btn btn-secondary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-right">
+
+    </div>
+  </div>
+</div>
+<%#= render "devise/shared/links" %>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
