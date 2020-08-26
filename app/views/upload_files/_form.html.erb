@@ -12,66 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :upload_type %>
-    <%= form.text_field :upload_type %>
+    <%= form.label "Activity Type" %>
+    <%= form.text_field :upload_type, :class => 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <%= form.hidden_field :name, :value => params[:name] %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label "Title of the Activity" %>
+    <%= form.text_field :title, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.text_field :location, :class => 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
+    <%= form.label "Activity Conducted Date" %>
+    <%= form.datetime_select :date, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :scientist_name %>
-    <%= form.text_field :scientist_name %>
+    <%= form.text_field :scientist_name, :class => 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :scientist_id %>
-    <%= form.text_field :scientist_id %>
+    <%= form.label "Scientist ID" %>
+    <%= form.text_field :scientist_id, :class => 'form-control' %>
   </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :archive %>
-    <%= form.check_box :archive %>
-  </div>
-
-  <div class="field">
-    <%= form.label :upload_data_id %>
-    <%= form.number_field :upload_data_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :institute_id %>
-    <%= form.number_field :institute_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <br>
+  <div class="actions text-centre">
+    <%= form.submit "Upload", class: "btn btn-info" %>
   </div>
 <% end %>

@@ -25,10 +25,10 @@ class UploadFilesController < ApplicationController
   # POST /upload_files.json
   def create
     @upload_file = UploadFile.new(upload_file_params)
-
+    @upload_file.institute_id = current_user.id
     respond_to do |format|
       if @upload_file.save
-        format.html { redirect_to @upload_file, notice: 'Upload file was successfully created.' }
+        format.html { redirect_to institute_activities_manage_path(name: @upload_file.name), notice: 'Upload file was successfully created.' }
         format.json { render :show, status: :created, location: @upload_file }
       else
         format.html { render :new }
@@ -40,9 +40,10 @@ class UploadFilesController < ApplicationController
   # PATCH/PUT /upload_files/1
   # PATCH/PUT /upload_files/1.json
   def update
+    @upload_file.institute_id = current_user.id
     respond_to do |format|
       if @upload_file.update(upload_file_params)
-        format.html { redirect_to @upload_file, notice: 'Upload file was successfully updated.' }
+        format.html { redirect_to institute_activities_manage_path(name: @upload_file.name), notice: 'Upload file was successfully updated.' }
         format.json { render :show, status: :ok, location: @upload_file }
       else
         format.html { render :edit }
@@ -70,7 +71,7 @@ class UploadFilesController < ApplicationController
   end
 
   def download
-
+    redirect_back fallback_location: institute_dashboard_path
   end
 
   private

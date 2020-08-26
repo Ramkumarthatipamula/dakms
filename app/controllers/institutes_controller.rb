@@ -62,6 +62,25 @@ class InstitutesController < ApplicationController
     end
   end
 
+  def dashboard
+    if params[:name].present?
+      @upload_files = UploadFile.where(name: params[:name])
+    end
+  end
+
+  def download_data
+    @users = User.where(type: "Institute")
+    if params[:type].present? && params[:user_id].present?
+      @upload_files = UploadFile.where(status: "Approved", name: params[:type], institute_id: params[:user_id])
+    end
+  end
+
+  def manage
+    if params[:name].present?
+      @upload_files = UploadFile.where(name: params[:name])      
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_institute

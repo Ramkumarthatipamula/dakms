@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   get "/electronic_wing/download_data" => "electronic_wing#download_data"
   get "/electronic_wing/rejected_data" => "electronic_wing#rejected_data"
 
+  get "/institute/dashboard" => "institutes#dashboard"
+  get "/institute/download_data" => "institutes#download_data"
+  get "/institute/activities/manage" => "institutes#manage"
+
+  get "/super_admin/dashboard" => "institutes#dashboard"
+
   get "/upload_file_status/update" => "upload_files#status"
   get "/approved_files_download" => "upload_files#download"
 
