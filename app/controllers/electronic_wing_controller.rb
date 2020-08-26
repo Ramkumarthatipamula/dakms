@@ -11,7 +11,21 @@ class ElectronicWingController < ApplicationController
   def dashboard
     @users = User.where(type: "Institute")
     if params[:type].present? && params[:user_id].present?
-      @upload_files = UploadFile.all
+      @upload_files = UploadFile.where(status: 'Pending', name: params[:type], institute_id: params[:user_id])
+    end
+  end
+
+  def download_data
+    @users = User.where(type: "Institute")
+    if params[:type].present? && params[:user_id].present?
+      @upload_files = UploadFile.where(status: "Approved", name: params[:type], institute_id: params[:user_id])
+    end
+  end
+
+  def rejected_data
+    @users = User.where(type: "Institute")
+    if params[:type].present? && params[:user_id].present?
+      @upload_files = UploadFile.where(status: "Rejected", name: params[:type], institute_id: params[:user_id])
     end
   end
 

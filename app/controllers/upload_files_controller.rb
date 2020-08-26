@@ -1,5 +1,5 @@
 class UploadFilesController < ApplicationController
-  before_action :set_upload_file, only: [:show, :edit, :update, :destroy]
+  before_action :set_upload_file, only: [:show, :edit, :update, :destroy, :status]
 
   # GET /upload_files
   # GET /upload_files.json
@@ -62,7 +62,11 @@ class UploadFilesController < ApplicationController
   end
 
   def status
-
+    if @upload_file.update(status: params[:status])
+      redirect_back fallback_location: electronic_wing_dashboard_path
+    else
+      format.html { redirect_to electronic_wing_dashboard_path }
+    end
   end
 
   def download

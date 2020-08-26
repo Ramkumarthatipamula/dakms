@@ -7,7 +7,7 @@ class HomeController < ApplicationController
       if current_user.type == 'Admin'
         redirect_to admin_path
       elsif current_user.type == 'ElectronicWing'
-        redirect_to electronic_wing_path
+        redirect_to electronic_wing_dashboard_path
       elsif current_user.type == 'Institute'
         redirect_to institute_path
       elsif current_user.type == 'SuperAdmin'

@@ -1,6 +1,6 @@
 <h3>Dashboard - Approve / Reject - Uploaded Activities / Projects</h3>
 
-<form action="/electronic_wing/dashboard">
+<form action="/electronic_wing/download_data">
   <label for="displaying">Select Institute / Centre</label>
   <select name="user_id" class="form-control" onchange="this.form.submit()">
     <option value=""></option>
@@ -30,7 +30,6 @@
           <th>Posted Date</th>
           <th>Attachment</th>
           <th>Description</th>
-          <th>Approve / Reject</th>
         </tr>
       </thead>
       <tbody>
@@ -43,13 +42,9 @@
             <td><%= upload_file.scientist_name %></td>
             <td><%= upload_file.created_at %></td>
             <td>
-              <%= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-info btn-sm' %>
+              <%= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-info' %>
             </td>
             <td><%= upload_file.description %></td>
-            <td>
-              <%= link_to 'Approve', upload_file_status_update_path(status: 'Approved', id: upload_file.id), class: 'btn btn-success btn-sm' %>
-              <%= link_to 'Reject', upload_file_status_update_path(status: 'Rejected', id: upload_file.id), class: 'btn btn-danger btn-sm' %>
-            </td>
           </tr>
         <% end %>
       </tbody>

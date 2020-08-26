@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get "/admin" => "admin#index"
   get "/admin/manage" => "admin#manage"
 
-  get "/electronic_wing" => "electronic_wing#dashboard"
+  get "/electronic_wing/dashboard" => "electronic_wing#dashboard"
+  get "/electronic_wing/download_data" => "electronic_wing#download_data"
+  get "/electronic_wing/rejected_data" => "electronic_wing#rejected_data"
 
-
-  get "/upload_files/status" => "upload_files#status"
-  get "/upload_files/download" => "upload_files#download"
+  get "/upload_file_status/update" => "upload_files#status"
+  get "/approved_files_download" => "upload_files#download"
 
   get "/institute" => "institute#index"
   get "/electronic_wing" => "electronic_wing#index"
