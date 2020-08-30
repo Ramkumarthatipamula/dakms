@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= form.label "Activity Type" %>
-    <%= form.text_field :upload_type, :class => 'form-control' %>
+    <%#= form.text_field :upload_type, :class => 'form-control' %>
+    <%= form.select(:upload_type, ['KVK/DAATTC', 'RARS', "Colleges" ], { include_blank: 'Select any activity type' }, { :class => 'form-control' }) %>
   </div>
 
   <%= form.hidden_field :name, :value => params[:name] %>
