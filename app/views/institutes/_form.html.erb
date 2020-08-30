@@ -47,10 +47,10 @@
   </div>
   <div class="field">
     <%= form.label "Username" %>
-    <%= form.text_field :name, :class => 'form-control' %>
+    <%= form.text_field :name, :class => 'form-control', placeholder: "Ra" %>
   </div>
 
-
+  <% @institute.password = @institute.pwd %>
   <div class="field">
     <%= form.label :password %>
     <%= form.text_field :password, :class => 'form-control' %>
@@ -75,6 +75,6 @@
 
 
   <div class="actions text-centre">
-    <%= form.submit "Add", class: "btn btn-info" %>
+    <%= form.submit button_name, class: "btn btn-info" %>
   </div>
 <% end %>
