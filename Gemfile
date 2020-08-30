@@ -59,3 +59,8 @@ gem 'pry'
 
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-datatables'
+
+
+gem 'active_storage-send_zip'
+
+gem 'rubyzip', '>= 1.0.0'

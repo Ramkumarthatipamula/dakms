@@ -47,6 +47,24 @@
   <div class="field">
     <%= form.label "Scientist Email ID" %>
     <%= form.email_field :scientist_id, :class => 'form-control' %>
+  </div><br>
+
+  <% if button_name == "Update" %>
+    <p>
+      <strong>Uploaded Files:</strong> <br/>
+      <% if @upload_file.uploads.attached? %>
+        <% @upload_file.uploads.each do |upload| %>
+          <%= link_to upload.filename, upload, target: '_blank' %> <br/>
+        <% end %>
+      <% else %>
+        <p>no uploads</p>
+      <% end %>
+    </p>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :upload_files %>
+    <%= form.file_field :uploads, multiple: true %>
   </div>
   <br>
   <div class="actions text-centre">

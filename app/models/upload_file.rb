@@ -6,4 +6,7 @@ class UploadFile < ApplicationRecord
   validates :date, presence: true
   validates :scientist_name, presence: true
   validates :scientist_id, presence: true
+
+  has_many_attached :uploads
+
 end

@@ -1,4 +1,5 @@
 class UploadFilesController < ApplicationController
+  include ActiveStorage::SendZip
   before_action :set_upload_file, only: [:show, :edit, :update, :destroy, :status]
 
   # GET /upload_files
@@ -19,6 +20,10 @@ class UploadFilesController < ApplicationController
   # GET /upload_files/1
   # GET /upload_files/1.json
   def show
+    respond_to do |format|
+      format.html { render }
+      format.zip { send_zip @upload_file.uploads }
+    end
   end
 
   # GET /upload_files/new
@@ -80,7 +85,8 @@ class UploadFilesController < ApplicationController
   end
 
   def download
-    redirect_back fallback_location: institute_dashboard_path
+    send_zip  = { "a": UploadFile.find(params[:id]).uploads }
+    # redirect_back fallback_location: institute_dashboard_path
   end
 
   private
@@ -91,6 +97,6 @@ class UploadFilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def upload_file_params
-      params.require(:upload_file).permit(:upload_type, :name, :title, :description, :location, :date, :scientist_name, :scientist_id, :status, :archive, :upload_data_id, :institute_id)
+      params.require(:upload_file).permit(:upload_type, :name, :title, :description, :location, :date, :scientist_name, :scientist_id, :status, :archive, :upload_data_id, :institute_id, uploads: [])
     end
 end
