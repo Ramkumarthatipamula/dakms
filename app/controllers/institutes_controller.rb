@@ -64,7 +64,7 @@ class InstitutesController < ApplicationController
 
   def dashboard
     if params[:name].present?
-      @upload_files = UploadFile.where(name: params[:name])
+      @upload_files = UploadFile.where(name: params[:name]).where.not(status: "Approved")
     end
   end
 
@@ -72,12 +72,14 @@ class InstitutesController < ApplicationController
     @users = User.where(type: "Institute")
     if params[:type].present? && params[:user_id].present?
       @upload_files = UploadFile.where(status: "Approved", name: params[:type], institute_id: params[:user_id])
+    elsif current_user.type == "Institute"
+      @upload_files = UploadFile.where(status: "Approved", institute_id: current_user.id)
     end
   end
 
   def manage
     if params[:name].present?
-      @upload_files = UploadFile.where(name: params[:name])      
+      @upload_files = UploadFile.where(name: params[:name])
     end
   end
 

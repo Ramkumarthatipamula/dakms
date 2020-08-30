@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Institute / Centre" %>
-    <%= form.text_field :institute_centre_name, :class => 'form-control' %>
-  </div>
+    <%#= form.label "Institute / Centre" %>
+    <%= form.text_field :institute_centre_name, :class => 'form-control', placeholder: "Institute/Centre name" %>
+  </div><br>
 
   <div class="field">
-    <%= form.label "Institute / Centre Type" %>
-    <%= form.select(:institute_centre_type, ['KVK/DAATTC', 'RARS', "Colleges" ], { include_blank: 'Select any activity type' }, { :class => 'form-control' }) %>
-  </div>
+    <%#= form.label "Institute / Centre Type" %>
+    <%= form.select(:institute_centre_type, ['KVK/DAATTC', 'RARS', "Colleges" ], { include_blank: 'Select any activity type' }, { :class => 'form-control', placeholder: "Institute/Centre type", disabled: button_name == 'Add' ? false : true }) %>
+  </div><br>
 
   <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location, :class => 'form-control' %>
-  </div>
+    <%#= form.label :location %>
+    <%= form.text_field :location, :class => 'form-control', placeholder: "Location" %>
+  </div><br>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address, :class => 'form-control' %>
-  </div>
+    <%#= form.label :address %>
+    <%= form.text_area :address, :class => 'form-control', placeholder: "Address" %>
+  </div><br>
 
   <!-- <div class="field">
     <%#= form.label :address %>
@@ -38,22 +38,22 @@
 
 
   <div class="field">
-    <%= form.label :mobile_number %>
-    <%= form.text_field :mobile_number, :class => 'form-control' %>
-  </div>
+    <%#= form.label :mobile_number %>
+    <%= form.text_field :mobile_number, :class => 'form-control', placeholder: "Mobile Number" %>
+  </div><br>
   <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email, :class => 'form-control' %>
-  </div>
+    <%#= form.label :email %>
+    <%= form.email_field :email, :class => 'form-control', placeholder: "Email" %>
+  </div><br>
   <div class="field">
-    <%= form.label "Username" %>
-    <%= form.text_field :name, :class => 'form-control', placeholder: "Ra" %>
-  </div>
+    <%#= form.label "Username" %>
+    <%= form.text_field :name, :class => 'form-control', placeholder: "Username", disabled: button_name == 'Add' ? false : true %>
+  </div><br>
 
   <% @institute.password = @institute.pwd %>
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, :class => 'form-control' %>
+    <%#= form.label :password %>
+    <%= form.text_field :password, :class => 'form-control', placeholder: "Password" %>
   </div><br>
 
 

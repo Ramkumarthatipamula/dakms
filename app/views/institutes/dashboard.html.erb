@@ -26,8 +26,8 @@
               <th>Date</th>
               <th>Scientist</th>
               <th>Posted Date</th>
-              <th>Attachment</th>
               <th>Status(EW)</th>
+              <th>Attachment</th>
               <th>Reupload</th>
             </tr>
           </thead>
@@ -38,16 +38,18 @@
                 <td><%= upload_file.name %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
-                <td><%= upload_file.date %></td>
+                <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
                 <td><%= upload_file.scientist_name %></td>
-                <td><%= upload_file.created_at %></td>
+                <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
+                <td><%= upload_file.status %></td>
                 <td>
                   <%= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-info btn-sm' %>
                 </td>
-                <td><%= upload_file.status %></td>
-                <td>
-                  <%= link_to 'Re Upload', upload_file_status_update_path(status: 'Pending', id: upload_file.id), class: 'btn btn-success btn-sm' %>
-                </td>
+                  <td>
+                    <% if upload_file.status != 'Approved' %>
+                    <%= link_to 'Re Upload', upload_file_status_update_path(status: 'Pending', id: upload_file.id), class: 'btn btn-success btn-sm' %>
+                    <% end %>
+                  </td>
               </tr>
             <% end %>
           </tbody>

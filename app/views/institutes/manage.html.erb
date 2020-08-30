@@ -11,8 +11,8 @@
             <th>Location</th>
             <th>Date</th>
             <th>Scientist</th>
-            <th>Attachment</th>
             <th>Posted Date</th>
+            <th>Attachment</th>
             <th>Manage</th>
           </tr>
         </thead>
@@ -24,10 +24,10 @@
               <td><%= upload_file.title %></td>
               <td><%= upload_file.description %></td>
               <td><%= upload_file.location %></td>
-              <td><%= upload_file.date %></td>
+              <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
               <td><%= upload_file.scientist_name %></td>
+              <td><%= upload_file.updated_at.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
               <td><%= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-success btn-sm' %></td>
-              <td><%= upload_file.updated_at %></td>
               <td><%= link_to 'Edit', edit_upload_file_path(upload_file, name: params[:name]), class: 'btn btn-info btn-sm' %></td>
             </tr>
           <% end %>

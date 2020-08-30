@@ -14,7 +14,7 @@
   <div class="field">
     <%= form.label "Activity Type" %>
     <%#= form.text_field :upload_type, :class => 'form-control' %>
-    <%= form.select(:upload_type, ['KVK/DAATTC', 'RARS', "Colleges" ], { include_blank: 'Select any activity type' }, { :class => 'form-control' }) %>
+    <%= form.select(:upload_type, ['Research', 'Event' ], { include_blank: 'Select any activity type' }, { :class => 'form-control' }) %>
   </div>
 
   <%= form.hidden_field :name, :value => params[:name] %>
@@ -26,7 +26,7 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description, :class => 'form-control' %>
+    <%= form.text_area :description, :class => 'form-control' %>
   </div>
 
   <div class="field">
@@ -45,8 +45,8 @@
   </div>
 
   <div class="field">
-    <%= form.label "Scientist Email" %>
-    <%= form.text_field :scientist_id, :class => 'form-control' %>
+    <%= form.label "Scientist Email ID" %>
+    <%= form.email_field :scientist_id, :class => 'form-control' %>
   </div>
   <br>
   <div class="actions text-centre">
