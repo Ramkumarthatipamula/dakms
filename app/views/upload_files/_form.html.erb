@@ -1,48 +1,48 @@
 <%= form_with(model: upload_file, local: true) do |form| %>
   <% if upload_file.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(upload_file.errors.count, "error") %> prohibited this upload_file from being saved:</h2>
+      <h3><p class="alert alert-danger"><%= pluralize(upload_file.errors.count, "error") %> prohibited this upload_file from being saved:</p></h3>
 
       <ul>
       <% upload_file.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><p class="alert alert-danger"><%= message %></p></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %><br>
 
   <div class="field">
     <%= form.label "Activity Type" %>
     <%#= form.text_field :upload_type, :class => 'form-control' %>
     <%= form.select(:upload_type, ['Research', 'Event' ], { include_blank: 'Select any activity type' }, { :class => 'form-control' }) %>
-  </div>
+  </div><br>
 
   <%= form.hidden_field :name, :value => params[:name] %>
 
   <div class="field">
     <%= form.label "Title of the Activity" %>
     <%= form.text_field :title, :class => 'form-control' %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, :class => 'form-control' %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location, :class => 'form-control' %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label "Activity Conducted Date" %>
     <%= form.datetime_select :date, :class => 'form-control' %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label :scientist_name %>
     <%= form.text_field :scientist_name, :class => 'form-control' %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label "Scientist Email ID" %>
