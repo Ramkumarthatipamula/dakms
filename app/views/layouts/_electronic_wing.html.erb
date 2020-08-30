@@ -38,7 +38,7 @@
           <div class="inner__sidebar_menu">
             <ul>
               <li>
-                <a href="<%= electronic_wing_dashboard_path %>" class="active">
+                <a href="<%= electronic_wing_dashboard_path %>" class="<%= params[:action] == 'dashboard' &&  params[:controller] == 'electronic_wing' ? 'active' : '' %>">
                 <span class="icon">
                   <i class="fa fa-list" aria-hidden="true"></i>
                 </span>
@@ -54,7 +54,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= new_institute_path %>">
+                <a href="<%= new_institute_path %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'institutes' ? 'active' : '' %>">
                 <span class="icon">
                   <i class="fa fa-plus mg-lf-30" aria-hidden="true"></i>
                 </span>
@@ -62,7 +62,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= admin_manage_path %>">
+                <a href="<%= admin_manage_path %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'admin' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-pencil-square-o mg-lf-30" aria-hidden="true"></i>
                   </span>
@@ -70,7 +70,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= admin_path %>">
+                <a href="<%= admin_path %>" class="<%= params[:action] == 'index' &&  params[:controller] == 'admin' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-eye mg-lf-30" aria-hidden="true"></i>
                   </span>
@@ -78,7 +78,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= electronic_wing_download_data_path %>">
+                <a href="<%= electronic_wing_download_data_path %>" class="<%= params[:action] == 'download_data' &&  params[:controller] == 'electronic_wing' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-download" aria-hidden="true"></i>
                   </span>
@@ -86,7 +86,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= electronic_wing_rejected_data_path %>">
+                <a href="<%= electronic_wing_rejected_data_path %>" class="<%= params[:action] == 'rejected_data' &&  params[:controller] == 'electronic_wing' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-download" aria-hidden="true"></i>
                   </span>

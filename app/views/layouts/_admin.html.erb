@@ -34,12 +34,12 @@
               <div class="icon">
               </div>
             </div> -->
-            <!-- <div class="home_link"> -->
+            <div class="home_link">
               <a href="/users/sign_out">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span>Log out</span>
               </a>
-            <!-- </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= new_institute_path %>">
+                <a href="<%= new_institute_path %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'institutes' ? 'active' : '' %>">
                 <span class="icon">
                   <i class="fa fa-plus mg-lf-30" aria-hidden="true"></i>
                 </span>
@@ -64,7 +64,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= admin_manage_path %>">
+                <a href="<%= admin_manage_path %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'admin' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-pencil-square-o mg-lf-30" aria-hidden="true"></i>
                   </span>
@@ -72,7 +72,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= admin_path %>" class="active">
+                <a href="<%= admin_path %>" class="<%= params[:action] == 'index' &&  params[:controller] == 'admin' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-eye mg-lf-30" aria-hidden="true"></i>
                   </span>
