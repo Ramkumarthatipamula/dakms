@@ -1,22 +1,24 @@
-<h3>Uploaded Activities / Projects</h3>
+<h3>Downloads</h3>
 <% if current_user.type != "Institute"%>
   <div class="item_wrap">
-    <div class="item">
-      <form action="/electronic_wing/download_data">
-        <label for="displaying">Select Institute / Centre</label>
-        <select name="user_id" class="form-control" onchange="this.form.submit()">
-          <option value=""></option>
-          <% @users.each do |bt|%>
-            <option value="<%= bt.id %>" <%= 'selected' if params[:user_id].to_i == bt.id %>> <%= bt.institute_centre_name %></option>
-          <% end %>
-        </select>
-        <label for="displaying">Select</label>
-        <select name="type" class="form-control" onchange="this.form.submit()">
-          <option value=""></option>
-          <option value="Activities" <%= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
-          <option value="Projects" <%= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
-        </select>
-      </form>
+    <div class="item" align="center">
+      <div class="col-8">
+        <form action="/electronic_wing/download_data">
+            <!-- <label for="displaying"></label> -->
+            <select name="user_id" class="form-control" onchange="this.form.submit()">
+              <option value="">Select Institute / Centre</option>
+              <% @users.each do |bt|%>
+                <option value="<%= bt.id %>" <%= 'selected' if params[:user_id].to_i == bt.id %>> <%= bt.institute_centre_name %></option>
+              <% end %>
+            </select>
+          <!-- <label for="displaying">Select</label> -->
+          <select name="type" class="form-control" onchange="this.form.submit()">
+            <option value="">Select</option>
+            <option value="Activities" <%= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
+            <option value="Projects" <%= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
+          </select>
+        </form>
+      </div>
     </div>
   </div>
 <% end %>
@@ -29,19 +31,21 @@
           <thead>
             <tr>
               <th>S.No:</th>
-              <th>Title of the Activity</th>
+              <th>Type</th>
+              <th>Title</th>
               <th>Location</th>
               <th>Date</th>
               <th>Scientist</th>
               <th>Posted Date</th>
-              <th>Attachment</th>
               <th>Description</th>
+              <th>Attachment</th>
             </tr>
           </thead>
           <tbody>
             <% @upload_files.each_with_index do |upload_file, index| %>
               <tr>
                 <td><%= index+1 %></td>
+                <td><%= upload_file.name %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
                 <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>

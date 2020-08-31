@@ -88,6 +88,7 @@ class InstitutesController < ApplicationController
 
   def manage
     if params[:name].present?
+      @upload_type = params[:name]
       if current_user.type == 'Institute'
         @upload_files = UploadFile.where(name: params[:name], institute_id: current_user.id)
       else

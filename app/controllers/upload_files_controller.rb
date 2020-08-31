@@ -29,6 +29,7 @@ class UploadFilesController < ApplicationController
   # GET /upload_files/new
   def new
     @upload_file = UploadFile.new
+    @name = params[:name]
   end
 
   # GET /upload_files/1/edit
@@ -45,6 +46,7 @@ class UploadFilesController < ApplicationController
         format.html { redirect_to institute_activities_manage_path(name: @upload_file.name), notice: 'Upload file was successfully created.' }
         format.json { render :show, status: :created, location: @upload_file }
       else
+        @name = @upload_file.name
         format.html { render :new }
         format.json { render json: @upload_file.errors, status: :unprocessable_entity }
       end

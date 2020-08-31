@@ -20,8 +20,8 @@
           <thead>
             <tr>
               <th>S.No:</th>
-              <th>Activity Type</th>
-              <th>Title of the Activity</th>
+              <th>Activity / Project Type</th>
+              <th>Title</th>
               <th>Location</th>
               <th>Date</th>
               <th>Scientist</th>
@@ -35,7 +35,7 @@
             <% @upload_files.each_with_index do |upload_file, index| %>
               <tr>
                 <td><%= index+1 %></td>
-                <td><%= upload_file.name %></td>
+                <td><%= upload_file.upload_type %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
                 <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
