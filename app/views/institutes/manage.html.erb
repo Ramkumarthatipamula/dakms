@@ -31,7 +31,11 @@
                 <%= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>
                 <%#= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-success btn-sm' %>
               </td>
-              <td><%= link_to 'Edit', edit_upload_file_path(upload_file, name: params[:name]), class: 'btn btn-info btn-sm' %></td>
+              <td>
+                <% if upload_file.status == 'Pending' %>
+                  <%= link_to 'Edit', edit_upload_file_path(upload_file, name: params[:name]), class: 'btn btn-info btn-sm' %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

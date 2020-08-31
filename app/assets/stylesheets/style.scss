@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Arial', sans-serif;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -26,7 +26,7 @@ body{
 .wrapper .top_navbar .logo{
 	width: 250px;
 	height: 100%;
-	background: #3421C0;
+	background: #099920;
 	border-bottom: 1px solid #22119d;
 }
 
@@ -53,9 +53,9 @@ body{
 
 .wrapper .top_navbar .top_menu .home_link a{
 	display: block;
-    background: #3421C0;
+    background: #099920;
     color: #fff;
-    padding: 8px 15px;
+    padding: 6px 12px;
     border-radius: 3px;
 }
 
@@ -96,11 +96,18 @@ body{
 .mg-lf-30 {
   margin-left: 30px;
 }
+.btn-info {
+    color: #fff;
+    background-color: #00920c;
+    border-color: #00920c;
+}
+
+
 
 .wrapper .top_navbar .right_info .icon_wrap{
 	padding: 8px 15px;
     border-radius: 3px;
-	background: #3421C0;
+	background: #099920;
     color: #fff;
     margin: 0 5px;
     cursor: pointer;
@@ -110,7 +117,7 @@ body{
 	position: fixed;
   	top: 65px;
   	left: 0;
-  	background: #3421C0;
+  	background: #4562b9;
   	width: 250px;
   	height: 100%;
   	transition: all 0.3s linear;
@@ -122,9 +129,9 @@ body{
 }
 
 .main_body .sidebar_menu ul li a{
-  color: #7467d3;
-  font-size: 18px;
-  padding: 20px 35px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 20px;
   display: block;
   white-space: nowrap;
 }
@@ -142,12 +149,12 @@ ol, ul {
 }
 
 .main_body .sidebar_menu ul li a:hover{
-  background: #5343c7;
+  background: #2d4ca7;
   color: #fff;
 }
 
 .main_body .sidebar_menu ul li a.active{
-  background: #22119d;
+  background: #2d4ca7;
   color: #fff;
 }
 
@@ -174,7 +181,7 @@ ol, ul {
   width: 40px;
   border-radius: 50%;
   height: 40px;
-  background: #3421C0;
+  background: #4562b9;
 }
 
 .main_body .sidebar_menu .hamburger .arrow{

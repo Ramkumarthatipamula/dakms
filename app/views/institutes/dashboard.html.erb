@@ -2,9 +2,9 @@
 <div class="item_wrap">
   <div class="item">
     <form action="/institute/dashboard">
-      <label for="displaying">Select</label>
+
       <select name="name" class="form-control" onchange="this.form.submit()">
-        <option value=""></option>
+        <option value="">Select Activities/Projects</option>
         <option value="Activities" <%= 'selected' if params[:name] == 'Activities' %>>Activities</option>
         <option value="Projects" <%= 'selected' if params[:name] == 'Projects' %>>Projects</option>
       </select>
@@ -47,7 +47,7 @@
                   <%#= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-info btn-sm' %>
                 </td>
                   <td>
-                    <% if upload_file.status != 'Approved' %>
+                    <% if upload_file.status == 'Rejected' %>
                     <%= link_to 'Re Upload', upload_file_status_update_path(status: 'Pending', id: upload_file.id), class: 'btn btn-success btn-sm' %>
                     <% end %>
                   </td>

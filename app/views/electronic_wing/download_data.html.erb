@@ -1,22 +1,24 @@
-<h3>Dashboard - Activities / Projects</h3>
+<h3>Download - Activities / Projects</h3>
 <% if current_user.type != "Institute"%>
   <div class="item_wrap">
-    <div class="item">
-      <form action="/electronic_wing/download_data">
-        <label for="displaying">Select Institute / Centre</label>
-        <select name="user_id" class="form-control" onchange="this.form.submit()">
-          <option value=""></option>
-          <% @users.each do |bt|%>
-            <option value="<%= bt.id %>" <%= 'selected' if params[:user_id].to_i == bt.id %>> <%= bt.name %></option>
-          <% end %>
-        </select>
-        <label for="displaying">Select</label>
-        <select name="type" class="form-control" onchange="this.form.submit()">
-          <option value=""></option>
-          <option value="Activities" <%= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
-          <option value="Projects" <%= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
-        </select>
-      </form>
+    <div class="item" align="center">
+      <div class="col-8" >
+        <form action="/electronic_wing/download_data">
+
+          <select name="user_id" class="form-control" onchange="this.form.submit()">
+            <option value="">Select Institute / Centre</option>
+            <% @users.each do |bt|%>
+              <option value="<%= bt.id %>" <%= 'selected' if params[:user_id].to_i == bt.id %>> <%= bt.name %></option>
+            <% end %>
+          </select><br>
+
+          <select name="type" class="form-control" onchange="this.form.submit()">
+            <option value="">Select</option>
+            <option value="Activities" <%= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
+            <option value="Projects" <%= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
+          </select>
+        </form>
+      </div>
     </div>
   </div>
 <% end %>
