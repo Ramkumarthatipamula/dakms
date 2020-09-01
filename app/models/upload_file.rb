@@ -8,5 +8,6 @@ class UploadFile < ApplicationRecord
   # validates :scientist_id, presence: true
 
   has_many_attached :uploads
+  belongs_to :institute
 
 end

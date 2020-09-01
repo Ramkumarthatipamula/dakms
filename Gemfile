@@ -64,3 +64,7 @@ gem 'jquery-datatables'
 gem 'active_storage-send_zip'
 
 gem 'rubyzip', '>= 1.0.0'
+gem 'zip-zip' # will load compatibility for old rubyzip API.
+
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'

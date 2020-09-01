@@ -36,7 +36,9 @@
 
   <div class="field">
     <%= form.label "Activity Conducted Date" %>
-    <%= form.datetime_select :date, :class => 'form-control', placeholder: 'Activity Conducted Date', :required => true %>
+    <%= form.text_field :date, class: 'form-control datepicker', value: @upload_file.date.strftime("%d-%m-%Y") %><br />
+
+    <%#= form.text_field :date, :class => 'form-control datepicker', value: (form.object.date.strftime("%d-%m-%Y") if form.object.date.present?), placeholder: 'Activity Conducted Date', :required => true, 'data-date-format' => "mm/dd/yyyy" %>
   </div><br>
   <% if @name != 'Activities' %>
     <div class="field">
@@ -53,7 +55,8 @@
   <% if button_name == "Update" %>
     <p>
       <strong>Uploaded Files:</strong> <br/>
-      <% if @upload_file.uploads.attached? %>
+      <% files_check = @upload_file.uploads.attached? %>
+      <% if files_check %>
         <% @upload_file.uploads.each do |upload| %>
           <%= link_to upload.filename, upload, target: '_blank' %> <br/>
         <% end %>
@@ -65,10 +68,18 @@
 
   <div class="field">
     <%= form.label :upload_files %>
-    <%= form.file_field :uploads, multiple: true, :required => true %>
+    <%= form.file_field :uploads, multiple: true, :required => files_check ? false : true %>
   </div>
   <br>
   <div class="actions text-centre">
     <%= form.submit button_name, class: "btn btn-info" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker({
+		  format: 'dd/mm/yyyy', "weekStart": 1, "autoclose": true
+		});
+  });
+</script>

@@ -1,27 +1,27 @@
 <h3>Download - Activities / Projects</h3>
-<% if current_user.type != "Institute"%>
-  <div class="item_wrap">
+<%# if current_user.type != "Institute"%>
+  <!-- <div class="item_wrap">
     <div class="item" align="center">
       <div class="col-8" >
         <form action="/electronic_wing/download_data">
 
           <select name="user_id" class="form-control" onchange="this.form.submit()">
             <option value="">Select Institute / Centre</option>
-            <% @users.each do |bt|%>
-              <option value="<%= bt.id %>" <%= 'selected' if params[:user_id].to_i == bt.id %>> <%= bt.name %></option>
-            <% end %>
+            <%# @users.each do |bt|%>
+              <option value="<%#= bt.id %>" <%#= 'selected' if params[:user_id].to_i == bt.id %>> <%#= bt.name %></option>
+            <%# end %>
           </select><br>
 
           <select name="type" class="form-control" onchange="this.form.submit()">
             <option value="">Select</option>
-            <option value="Activities" <%= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
-            <option value="Projects" <%= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
+            <option value="Activities" <%#= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
+            <option value="Projects" <%#= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
           </select>
         </form>
       </div>
     </div>
-  </div>
-<% end %>
+  </div> -->
+<%# end %>
 <br>
 <% if @upload_files.present? %>
   <div class="item_wrap">
@@ -31,6 +31,7 @@
           <thead>
             <tr>
               <th>S.No:</th>
+              <th>Institute Name</th>
               <th>Activity / Project type</th>
               <th>Title</th>
               <th>Location</th>
@@ -45,12 +46,13 @@
             <% @upload_files.each_with_index do |upload_file, index| %>
               <tr>
                 <td><%= index+1 %></td>
+                <td><%= upload_file.institute.name if upload_file.institute.present? %></td>
                 <td><%= upload_file.upload_type %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
-                <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
+                <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
                 <td><%= upload_file.scientist_name %></td>
-                <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
+                <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
                 <td><%= upload_file.description %></td>
                 <td>
                   <%= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>

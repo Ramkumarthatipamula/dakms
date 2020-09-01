@@ -1,5 +1,7 @@
 class UploadFilesController < ApplicationController
   include ActiveStorage::SendZip
+  require 'zip'
+
   before_action :set_upload_file, only: [:show, :edit, :update, :destroy, :status]
 
   # GET /upload_files
@@ -34,6 +36,7 @@ class UploadFilesController < ApplicationController
 
   # GET /upload_files/1/edit
   def edit
+    @name = params[:name]
   end
 
   # POST /upload_files
@@ -62,6 +65,7 @@ class UploadFilesController < ApplicationController
         format.html { redirect_to institute_activities_manage_path(name: @upload_file.name), notice: 'Upload file was successfully updated.' }
         format.json { render :show, status: :ok, location: @upload_file }
       else
+        @name = @upload_file.name
         format.html { render :edit }
         format.json { render json: @upload_file.errors, status: :unprocessable_entity }
       end

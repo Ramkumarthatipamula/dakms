@@ -1,25 +1,25 @@
-<h3>Dashboard - Approve / Reject - Uploaded Activities / Projects</h3>
-<div class="item_wrap">
+<h3>Pending Activities / Projects</h3>
+<!-- <div class="item_wrap">
   <div class="item" align="center">
     <div class="col-8" >
     <form action="/electronic_wing/dashboard">
 
       <select name="user_id" class="form-control" onchange="this.form.submit()">
         <option value="">Select Institute / Centre</option>
-        <% @users.each do |bt|%>
-          <option value="<%= bt.id %>" <%= 'selected' if params[:user_id].to_i == bt.id %>> <%= bt.name %></option>
-        <% end %>
+        <%# @users.each do |bt|%>
+          <option value="<%#= bt.id %>" <%#= 'selected' if params[:user_id].to_i == bt.id %>> <%#= bt.name %></option>
+        <%# end %>
       </select><br>
 
       <select name="type" class="form-control" onchange="this.form.submit()">
         <option value="">Select</option>
-        <option value="Activities" <%= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
-        <option value="Projects" <%= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
+        <option value="Activities" <%#= 'selected' if params[:type].to_s == 'Activities' %>>Activities</option>
+        <option value="Projects" <%#= 'selected' if params[:type].to_s == 'Projects' %>>Projects</option>
       </select>
     </form>
   </div>
 </div>
-</div>
+</div> -->
 <br>
 <% if @upload_files.present? %>
   <div class="item_wrap">
@@ -29,6 +29,7 @@
           <thead>
             <tr>
               <th>S.No:</th>
+              <th>Institute Name</th>
               <th>Activity / Project type</th>
               <th>Title</th>
               <th>Location</th>
@@ -44,20 +45,21 @@
             <% @upload_files.each_with_index do |upload_file, index| %>
               <tr>
                 <td><%= index+1 %></td>
+                <td><%= upload_file.institute.name if upload_file.institute.present? %></td>
                 <td><%= upload_file.upload_type %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
-                <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
+                <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
                 <td><%= upload_file.scientist_name %></td>
-                <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%m-%d-%Y") %></td>
+                <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
                 <td><%= upload_file.description %></td>
                 <td>
                   <%= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>
                   <%#= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-info btn-sm' %>
                 </td>
                 <td>
-                  <%= link_to 'Approve', upload_file_status_update_path(status: 'Approved', id: upload_file.id), class: 'btn btn-success btn-sm' %>
-                  <%= link_to 'Reject', upload_file_status_update_path(status: 'Rejected', id: upload_file.id), :data => {:confirm => 'Are you sure?'}, class: 'btn btn-danger btn-sm'%>
+                  <%= link_to 'Approve', upload_file_status_update_path(status: 'Approved', id: upload_file.id), class: 'btn btn-success btn-sm', :data => {:confirm => 'Are you sure you want to Approve?'} %>
+                  <%= link_to 'Reject', upload_file_status_update_path(status: 'Rejected', id: upload_file.id),  class: 'btn btn-danger btn-sm', style: "background-color: #f46464 !important; border-color: #f46464;", :data => {:confirm => 'Are you sure you want to reject?'} %>
                 </td>
               </tr>
             <% end %>
