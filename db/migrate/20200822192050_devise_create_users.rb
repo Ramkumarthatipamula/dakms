@@ -18,10 +18,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :phone_number
       t.string :address
       t.string :designation
-      t.string :institute_type
       t.string :location
+      t.string :pwd
       t.string :type, default: "SuperAdmin"
-
+      t.string :institute_centre_name
+      t.string :institute_centre_type
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
