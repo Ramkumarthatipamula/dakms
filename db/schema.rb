@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_09_12_145605) do
     t.datetime "updated_at", null: false
     t.string "file_type"
     t.string "duration_of_video"
+    t.string "reason"
   end
 
   create_table "uploads", force: :cascade do |t|

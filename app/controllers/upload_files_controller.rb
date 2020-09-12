@@ -82,6 +82,27 @@ class UploadFilesController < ApplicationController
     end
   end
 
+  def add_reason
+    @document_id = params[:document_id]
+  end
+
+  def reason_save
+    if !params[:reason].present?
+			result = {type: 'error',message: ["Reason can't be blank."]}
+      render json: result
+      return
+		else
+			file = UploadFile.find(params[:document_id])
+      file.reason = params[:reason] if file.present?
+      if file.save(validate: false)
+  			flash[:notice] = "File updated successfully"
+  			result = {type: 'success',message: ["File updated successfully."]}
+  			render json: result
+        return
+      end
+		end
+  end
+
   def status
     if @upload_file.update(status: params[:status])
       redirect_back fallback_location: electronic_wing_dashboard_path

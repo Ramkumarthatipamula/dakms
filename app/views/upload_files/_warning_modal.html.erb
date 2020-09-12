@@ -1,0 +1,80 @@
+<style type="text/css">
+/***** Top content *****/
+form .form-bottom button.btn {
+  min-width: 105px;
+}
+form.client-form fieldset {
+  display: none;
+}
+</style>
+<!-- sample modal content -->
+<div id="addClientModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content model-lg">
+      <div class="modal-header">
+        <h6 class="modal-title" id="myModalLabel">Please give me a reason</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="error_messages" id="error_messages"></div>
+        <div class="form-bottom">
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Reason..." required="required" name="reason" id="reason"></textarea>
+          </div>
+          <div class="text-right">
+            <button type="button" class="btn btn-danger btn-sm" style="background-color: #f46464 !important; border-color: #f46464;" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button type="submit" class="btn btn-info btn-next btn-sm">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.modal -->
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    // $('.client-form fieldset:first-child').fadeIn('high');
+    //
+    // $('.client-form input[type="text"],input[type="reason"]').on('focus', function () {
+    //     $(this).removeClass('input-error');
+    // });
+    //
+    // next step
+    $('.btn-next').on('click', function () {
+        let reason = $("#reason").val()
+        console.log(reason);
+        var next_step = true;
+        $.ajax({
+            type: "POST",
+            url: `<%= reason_save_path %>`,
+            data: {reason: reason, document_id: `<%= @document_id %>`},
+            success: function(response){
+              console.log(response);
+              if (response.type == 'success'){
+                console.log(response.type)
+                location.reload()
+                $('#addClientModal').modal('close');
+              } else if(response.type == 'error'){
+                $("#error_messages").html(error_container(response.message));
+                  $(this).addClass('input-error');
+                  next_step = false;
+                }
+              },
+            error: function(data) {
+              return false
+            }
+        });
+    });
+});
+
+function error_container(error){
+    errHtml = '<div class="alert alert-danger alert-dismissible" style="font-size: 12px;" role="alert">'
+    errHtml += '<button type="button" class="close" data-dismiss="alert" style="font-size: 12px;" aria-label="Close"><span>×</span></button>'
+    $.each(error, function( index, value ) {
+      errHtml += `${value} </br>`
+    });
+    errHtml += '</div>'
+    return errHtml;
+ }
+</script>

@@ -25,5 +25,9 @@ Rails.application.routes.draw do
   get "/super_admin" => "super_admin#index"
   get "/add_institute" => "admin#add_institute"
 
+  get '/add_reason' ,to: 'upload_files#add_reason' ,as: 'add_reason'
+  post '/reason_save' ,to: 'upload_files#reason_save' ,as: 'reason_save'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
