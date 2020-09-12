@@ -56,25 +56,8 @@ ActiveRecord::Schema.define(version: 2020_09_12_145605) do
     t.string "reason"
   end
 
-  create_table "uploads", force: :cascade do |t|
-    t.string "upload_type"
-    t.string "name"
-    t.string "title"
-    t.string "description"
-    t.string "location"
-    t.datetime "date"
-    t.string "scientist_name"
-    t.string "scientist_id"
-    t.string "status", default: "Pending"
-    t.boolean "archive"
-    t.integer "upload_data_id"
-    t.integer "institute_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -85,14 +68,13 @@ ActiveRecord::Schema.define(version: 2020_09_12_145605) do
     t.string "address"
     t.string "designation"
     t.string "location"
-    t.string "type", default: "SuperAdmin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "pwd"
+    t.string "type", default: "SuperAdmin"
     t.string "institute_centre_name"
     t.string "institute_centre_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "discipline"
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
