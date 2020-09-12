@@ -11,6 +11,6 @@ user1 = User.new(discipline: "Research", institute_centre_type: 'RARS', institut
 user1.save(validate: false)
 user2 = User.new(type: "ElectronicWing", name: "Electronic Wing", email: "electronic_wing@demo.com", password: "000000")
 user2.save(validate: false)
-user3 = User.new(discipline: "Research", institute_centre_type: 'UG/PG Colleges', institute_centre_name: 'Rajendranagar',location: "Rajendranagar", address: "500030", mobile_number: "9014488000", type: "Institute", name: "Teaching", email: "teaching@demo.com", password: "000000")
+user3 = User.new(discipline: "Teaching", institute_centre_type: 'UG/PG Colleges', institute_centre_name: 'Palem',location: "Palem", address: "500030", mobile_number: "9014488000", type: "Institute", name: "Teaching", email: "teaching@demo.com", password: "000000")
 user3.save(validate: false)
 p "completed"
