@@ -15,7 +15,7 @@
       <div class="top_navbar">
         <div class="top_menu">
           <div class="home_link">
-            <img src="<%= asset_path 'download.jpeg' %>" height="50px" width="50px">
+            <img src="/download.jpeg" height="50px" width="50px">
             <span class="header-style1"> &nbsp;Digital Agriculture Knowledge Management System(DAKMS)</span>
           </div>
           <div class="right_info">
@@ -45,6 +45,32 @@
                   <span class="list">Dashboard</span>
                 </a>
               </li>
+              <% if current_user.discipline != 'Teaching' %>
+                <li>
+                  <a href="#">
+                  <span class="icon">
+                    <!-- <i class="fa fa-upload" aria-hidden="true"></i> -->
+                  </span>
+                    <span class="list">Projects</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= new_upload_file_path(name: "Project") %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'upload_files' && params[:name] == 'Project' ? 'active' : '' %>">
+                    <span class="icon">
+                      <i class="fa fa-upload mg-lf-30" aria-hidden="true"></i>
+                    </span>
+                    <span class="list">Upload</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= institute_activities_manage_path(name: "Project") %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'institutes' && params[:name] == 'Project' ? 'active' : '' %>">
+                    <span class="icon">
+                      <i class="fa fa-pencil-square-o mg-lf-30" aria-hidden="true"></i>
+                    </span>
+                    <span class="list">Manage</span>
+                  </a>
+                </li>
+              <% end %>
               <li>
                 <a href="#">
                 <span class="icon">
@@ -54,7 +80,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= new_upload_file_path(name: "Activities") %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'upload_files' && params[:name] == 'Activities' ? 'active' : '' %>">
+                <a href="<%= new_upload_file_path(name: "Activity") %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'upload_files' && params[:name] == 'Activity' ? 'active' : '' %>">
                 <span class="icon">
                   <i class="fa fa-upload mg-lf-30" aria-hidden="true"></i>
                 </span>
@@ -62,31 +88,7 @@
                 </a>
               </li>
               <li>
-                <a href="<%= institute_activities_manage_path(name: "Activities") %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'institutes' && params[:name] == 'Activities' ? 'active' : '' %>">
-                  <span class="icon">
-                    <i class="fa fa-pencil-square-o mg-lf-30" aria-hidden="true"></i>
-                  </span>
-                  <span class="list">Manage</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                <span class="icon">
-                  <!-- <i class="fa fa-upload" aria-hidden="true"></i> -->
-                </span>
-                  <span class="list">Projects</span>
-                </a>
-              </li>
-              <li>
-                <a href="<%= new_upload_file_path(name: "Projects") %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'upload_files' && params[:name] == 'Projects' ? 'active' : '' %>">
-                  <span class="icon">
-                    <i class="fa fa-upload mg-lf-30" aria-hidden="true"></i>
-                  </span>
-                  <span class="list">Upload</span>
-                </a>
-              </li>
-              <li>
-                <a href="<%= institute_activities_manage_path(name: "Projects") %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'institutes' && params[:name] == 'Projects' ? 'active' : '' %>">
+                <a href="<%= institute_activities_manage_path(name: "Activity") %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'institutes' && params[:name] == 'Activitys' ? 'active' : '' %>">
                   <span class="icon">
                     <i class="fa fa-pencil-square-o mg-lf-30" aria-hidden="true"></i>
                   </span>

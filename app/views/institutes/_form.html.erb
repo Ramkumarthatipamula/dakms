@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%#= form.label "Institute / Centre" %>
-    <%= form.text_field :institute_centre_name, :class => 'form-control', placeholder: "Institute/Centre Name", :required => true %>
+    <%#= form.label "Institute / Centre Type" %>
+    <%= form.select(:discipline, ['Research', 'Extension', "Teaching" ], { include_blank: 'Select Discipline' }, { :class => 'form-control discipline_select', placeholder: "Select Discipline", :required => true, disabled: button_name == 'Add' ? false : true }) %>
   </div><br>
 
   <div class="field">
     <%#= form.label "Institute / Centre Type" %>
-    <%= form.select(:institute_centre_type, ['KVK/DAATTC', 'RARS', "Colleges" ], { include_blank: 'Select Institute/Centre Type' }, { :class => 'form-control', placeholder: "Institute/Centre type", :required => true, disabled: button_name == 'Add' ? false : true }) %>
+    <%= form.select(:institute_centre_type, [@institute.institute_centre_type], { include_blank: 'Select Type of Institute' }, { :class => 'form-control center_type', placeholder: "Institute/Centre type", :required => true, disabled: button_name == 'Add' ? false : true }) %>
+  </div><br>
+
+  <div class="field">
+    <%#= form.label "Institute / Centre" %>
+    <%= form.text_field :institute_centre_name, :class => 'form-control', placeholder: "Institute/Centre Name", :required => true %>
   </div><br>
 
   <div class="field">
@@ -78,3 +83,56 @@
     <%= form.submit button_name, class: "btn btn-info" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var el = $(".discipline_select")
+  console.log("<%= @institute.id %>");
+  console.log("<%= @institute.discipline %>");
+  console.log("<%= @institute.institute_centre_type %>");
+  <% unless @institute.id %>
+    functionName()
+  <% end %>
+
+  $(".discipline_select").change(function(){
+    // var el = $(this) ;
+    functionName()
+    console.log(el);
+  })
+
+function functionName()
+{
+  if (el.val() == 'Research') {
+    // alert('jjjjjjjjjjjjjjjjjj')
+    // $(".center_type").html = ''
+    $(".center_type").html('')
+    $(".center_type").append("<option value=''>Select Type of Institute</option>");
+    $(".center_type").append("<option value='RARS'>RARS</option>");
+    $(".center_type").append("<option value='ARS'>ARS</option>");
+    $(".center_type").append("<option value='AICRP'>AICRP</option></select>");
+    $(".center_type").append("<option value='AINP'>AINP</option></select>");
+    $(".center_type").append("<option value='Other'>Other</option></select>");
+  }
+  else if (el.val() =='Extension') {
+    console.log('Extension');
+    $(".center_type").html('')
+    $(".center_type").append("<option value=''>Select Type of Institute</option>");
+    $(".center_type").append("<option value='DAATTCs'>DAATTCs</option>");
+    $(".center_type").append("<option value='KVKs'>KVKs</option>");
+    $(".center_type").append("<option value='AI&CC'>AI&CC</option></select>");
+    $(".center_type").append("<option value='ATIC'>ATIC</option></select>");
+    $(".center_type").append("<option value='EEI'>EEI</option></select>");
+    $(".center_type").append("<option value='Other'>Other</option></select>");
+  }
+  else if (el.val() =='Teaching') {
+    console.log('Teaching');
+    $(".center_type").html('')
+    $(".center_type").append("<option value=''>Select Type of Institute</option>");
+    $(".center_type").append("<option value='UG/PG Colleges'>UG/PG Colleges</option>");
+    $(".center_type").append("<option value='Diploma Colleges'>Diploma Colleges</option>");
+    $(".center_type").append("<option value='Other'>Other</option></select>");
+  }
+
+}
+});
+</script>

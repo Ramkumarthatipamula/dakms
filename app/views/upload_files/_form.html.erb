@@ -14,14 +14,19 @@
   <div class="field">
     <%#= form.label "Activity Type" %>
     <%#= form.text_field :upload_type, :class => 'form-control' %>
-    <%= form.select(:upload_type, ['Research', 'Event' ], { include_blank: 'Select any '+ @name +' type' }, { :class => 'form-control', placeholder: 'Activity Type', :required => true }) %>
+    <% if @name != 'Activity' %>
+      <%= form.select(:upload_type, ["Crop improvement", "Crop production", "Crop protection", "Natural Resource Management", "Social Sciences", "Soil & Water Engineering", "Agricultural Processing", "Bioenergy", "Farm Power and Machinery", "Soil and water conservation", "Horticulture", "Community science", "Agricultural Engineering", "Food science and Technology", "Fisheries/Animal sciences", "Other"], { include_blank: 'Select any discipline' }, { :class => 'form-control', placeholder: 'Activity Type', :required => true }) %>
+    <% else %>
+      <% upload_types = current_user.discipline == 'Teaching' ? ["Student Ready Programme", "Village Adoption", "Chenu Kaburlu", "Workshops/Guest Lecturers", "Personality Development", "NSS/Harithaharam", "Others"] : ["Minikit Testing", "OFTs", "OFDs", "FLDs", "Diagnostic filed visits", "Kisan Melas", "Formaers Training", "Extension Studies/Success Stories", "Other"] %>
+      <%= form.select(:upload_type, upload_types, { include_blank: 'Select any Activity type' }, { :class => 'form-control', placeholder: 'Activity Type', :required => true }) %>
+    <% end %>
   </div><br>
 
-  <%= form.hidden_field :name, :value => params[:name] %>
+  <%= form.hidden_field :name, :value => @name %>
 
   <div class="field">
     <%#= form.label "Title of the Activity" %>
-    <%= form.text_field :title, :class => 'form-control', placeholder: 'Title of the '+ @name, :required => true %>
+    <%= form.text_field :title, :class => 'form-control', placeholder: 'Title', :required => true %>
   </div><br>
 
   <div class="field">
@@ -35,12 +40,12 @@
   </div><br>
 
   <div class="field">
-    <%= form.label "Activity Conducted Date" %>
-    <%= form.text_field :date, class: 'form-control datepicker', value: (@upload_file.date.strftime("%d-%m-%Y") if @upload_file.date.present?) %><br />
+    <%= form.text_field :date, class: 'form-control datepicker', value: (@upload_file.date.strftime("%d-%m-%Y") if @upload_file.date.present?), placeholder: 'Conducted Date', autocomplete: "off" %><br />
 
     <%#= form.text_field :date, :class => 'form-control datepicker', value: (form.object.date.strftime("%d-%m-%Y") if form.object.date.present?), placeholder: 'Activity Conducted Date', :required => true, 'data-date-format' => "mm/dd/yyyy" %>
-  </div><br>
-  <% if @name != 'Activities' %>
+  </div>
+
+  <% if @name != 'Activity' %>
     <div class="field">
       <%#= form.label :scientist_name %>
       <%= form.text_field :scientist_name, :class => 'form-control', placeholder: 'Scientist Name', :required => true %>
@@ -52,14 +57,24 @@
     </div><br>
   <% end %>
 
+  <div class="field">
+    <%= form.select(:file_type, ["Video", "Audio", "Image", "PDF", "Word"], { include_blank: 'File Type' }, { :class => 'form-control check_video', :required => true, disabled: @upload_file.id ? true : false }) %>
+  </div><br>
+
+  <div class="field">
+    <%= form.select(:duration_of_video, ["Below 1 min", "1-2 min", "2-3 min", "4-5 min", "Above 5 min"], { include_blank: 'Duration of Video' }, { :class => 'form-control video_select' }) %>
+  </div><br>
+
+
   <% if button_name == "Update" %>
     <p>
-      <strong>Uploaded Files:</strong> <br/>
-      <% files_check = @upload_file.uploads.attached? %>
+      <strong>Uploaded File:</strong> <br/>
+      <%# files_check = @upload_file.uploads.attached? %>
+      <% files_check = @upload_file.file.attached? %>
       <% if files_check %>
-        <% @upload_file.uploads.each do |upload| %>
-          <%= link_to upload.filename, upload, target: '_blank' %> <br/>
-        <% end %>
+        <%# @upload_file.uploads.each do |upload| %>
+          <%= link_to @upload_file.file.filename, @upload_file.file, target: '_blank' %> <br/>
+        <%# end %>
       <% else %>
         <p>no uploads</p>
       <% end %>
@@ -67,8 +82,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :upload_files %>
-    <%= form.file_field :uploads, multiple: true, :required => files_check ? false : true %>
+    <%= form.label :attachment %>
+    <%= form.file_field :file, multipart: true, :required => files_check ? false : true %>
   </div>
   <br>
   <div class="actions text-centre">
@@ -81,5 +96,15 @@
     $('.datepicker').datepicker({
 		  format: 'dd/mm/yyyy', "weekStart": 1, "autoclose": true
 		});
+    $(".check_video").change(function(){
+      if ($(".check_video").val() != 'Video') {
+        $(".video_select").hide()
+      } else {
+        $(".video_select").show()
+      }
+    })
+    if ($(".check_video").val() != 'Video') {
+      $(".video_select").hide()
+    }
   });
 </script>

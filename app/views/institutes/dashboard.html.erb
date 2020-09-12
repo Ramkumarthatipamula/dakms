@@ -1,16 +1,18 @@
 <h3>Dashboard - Uploaded Activities / Projects</h3>
+<% if current_user.discipline != 'Teaching' %>
 <div class="item_wrap">
   <div class="item">
     <form action="/institute/dashboard">
 
-      <select name="name" class="form-control" onchange="this.form.submit()">
-        <option value="">Select Activities/Projects</option>
-        <option value="Activities" <%= 'selected' if params[:name] == 'Activities' %>>Activities</option>
-        <option value="Projects" <%= 'selected' if params[:name] == 'Projects' %>>Projects</option>
-      </select>
+        <select name="name" class="form-control" onchange="this.form.submit()">
+          <option value="">Select Activities/Projects</option>
+          <option value="Activity" <%= 'selected' if params[:name] == 'Activity' %>>Activities</option>
+          <option value="Project" <%= 'selected' if params[:name] == 'Project' %>>Projects</option>
+        </select>
     </form>
   </div>
 </div>
+<% end %>
 <br>
 <% if @upload_files.present? %>
   <div class="item_wrap">
@@ -43,7 +45,12 @@
                 <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
                 <td><%= upload_file.status %></td>
                 <td>
-                  <%= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>
+                  <% if upload_file.file.attached? %>
+                    <%= link_to 'Download', upload_file.file, class: "btn btn-success btn-sm", target: '_blank' %>
+                  <% else %>
+                    <%#= link_to 'Download', "#", method: :get, class: "btn btn-success btn-sm" %>
+                  <% end %>
+                  <%#= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>
                   <%#= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-info btn-sm' %>
                 </td>
                   <td>

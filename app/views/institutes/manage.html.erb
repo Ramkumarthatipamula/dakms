@@ -10,7 +10,7 @@
             <th>Description</th>
             <th>Location</th>
             <th>Date</th>
-            <% if @upload_type != 'Activities' %>
+            <% if @upload_type != 'Activity' %>
               <th>Scientist</th>
             <% end %>
             <th>Posted Date</th>
@@ -28,13 +28,18 @@
               <td><%= upload_file.description %></td>
               <td><%= upload_file.location %></td>
               <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
-              <% if @upload_type != 'Activities' %>
+              <% if @upload_type != 'Activity' %>
                 <td><%= upload_file.scientist_name %></td>
               <% end %>
               <td><%= upload_file.updated_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
               <td><%= upload_file.status %></td>
               <td>
-                <%= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>
+                <%#= link_to 'Download', upload_file_path(format: :zip, id: upload_file.id), method: :get, class: "btn btn-success btn-sm" %>
+                <% if upload_file.file.attached? %>
+                  <%= link_to 'Download', upload_file.file, class: "btn btn-success btn-sm", target: '_blank' %>
+                <% else %>
+                  <%#= link_to 'Download', "#", method: :get, class: "btn btn-success btn-sm" %>
+                <% end %>
                 <%#= link_to 'Download', approved_files_download_path(id: upload_file.id), class: 'btn btn-success btn-sm' %>
               </td>
               <td>

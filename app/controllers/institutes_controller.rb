@@ -73,7 +73,9 @@ class InstitutesController < ApplicationController
 
   def dashboard
     if params[:name].present?
-      @upload_files = UploadFile.where(name: params[:name]).where.not(status: "Approved")
+      @upload_files = UploadFile.where(name: params[:name], institute_id: current_user.id).where.not(status: "Approved")
+    elsif current_user.discipline == 'Teaching'
+      @upload_files = UploadFile.where(institute_id: current_user.id).where.not(status: "Approved")
     end
   end
 
@@ -105,6 +107,6 @@ class InstitutesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def institute_params
-      params.require(:institute).permit(:name, :password, :email, :mobile_number, :phone_number, :address, :designation, :institute_centre_name, :institute_centre_type, :location, :type, :pwd)
+      params.require(:institute).permit(:name, :password, :email, :mobile_number, :phone_number, :address, :designation, :institute_centre_name, :institute_centre_type, :location, :type, :pwd, :discipline)
     end
 end

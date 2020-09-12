@@ -1,4 +1,5 @@
 class Institute < User
+  validates :discipline, presence: true
   validates :institute_centre_name, presence: true
   validates :institute_centre_type, presence: true
   validates :location, presence: true

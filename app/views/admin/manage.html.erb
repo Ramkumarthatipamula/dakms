@@ -5,6 +5,7 @@
         <thead>
           <tr>
             <th>S.No:</th>
+            <th>Discipline</th>
             <th>Institute / Centre</th>
             <th>Institute / Centre Type</th>
             <th>Location</th>
@@ -17,6 +18,7 @@
           <% @users.each_with_index do |user, index| %>
             <tr>
               <td><%= index+1 %></td>
+              <td><%= user.discipline %></td>
               <td><%= user.institute_centre_name %></td>
               <td><%= user.institute_centre_type %></td>
               <td><%= user.location %></td>
