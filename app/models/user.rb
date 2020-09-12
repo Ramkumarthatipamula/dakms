@@ -10,6 +10,7 @@ class User < ApplicationRecord
   def self.find_for_database_authentication(conditions)
     login = conditions.delete(:login)
     u = self.arel_table
-    where(conditions).where(u[:name].eq(login).or(u[:email].eq(login))).first
+    # where(conditions).where(u[:name].eq(login).or(u[:email].eq(login))).first
+    where(conditions).where(u[:name].eq(login)).first
   end
 end

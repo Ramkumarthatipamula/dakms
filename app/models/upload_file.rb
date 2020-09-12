@@ -7,6 +7,7 @@ class UploadFile < ApplicationRecord
   validates :location, presence: true
   validates :date, presence: true
   validate :file_format
+  default_scope { with_attached_file }
   # validates :scientist_name, presence: true
   # validates :scientist_id, presence: true
 
