@@ -92,9 +92,10 @@ class UploadFilesController < ApplicationController
       render json: result
       return
 		else
-			file = UploadFile.find(params[:document_id])
-      file.reason = params[:reason] if file.present?
-      if file.save(validate: false)
+			upload_file = UploadFile.find(params[:document_id])
+      upload_file.reason = params[:reason] if upload_file.present?
+      upload_file.status = "Rejected" if upload_file.present?
+      if upload_file.save(validate: false)
   			flash[:notice] = "File updated successfully"
   			result = {type: 'success',message: ["File updated successfully."]}
   			render json: result
