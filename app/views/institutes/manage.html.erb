@@ -24,7 +24,7 @@
           <% @upload_files.each_with_index do |upload_file, index| %>
             <tr>
               <td><%= index+1 %></td>
-              <td><%= upload_file.institute.discipline if upload_file.institute.present? %></td>
+              <td><%= upload_file.upload_type %></td>
               <td><%= upload_file.title %></td>
               <td><%= upload_file.description %></td>
               <td><%= upload_file.location %></td>
