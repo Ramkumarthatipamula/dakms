@@ -31,13 +31,18 @@
           <thead>
             <tr>
               <th>S.No:</th>
-              <th>Type</th>
+              <% if current_user.discipline == 'Teaching' %>
+                <th>Activity Type</th>
+              <% else %>
+                <th>Project/Activity</th>
+              <% end %>
+              <th>Discipline</th>
               <th>Title</th>
               <th>Location</th>
               <th>Date</th>
               <th>Scientist</th>
               <th>Posted Date</th>
-              <th>Description</th>
+              <th>File Type</th>
               <th>Attachment</th>
             </tr>
           </thead>
@@ -46,12 +51,13 @@
               <tr>
                 <td><%= index+1 %></td>
                 <td><%= upload_file.name %></td>
+                <td><%= upload_file.institute.discipline if upload_file.institute.present? %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
                 <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
                 <td><%= upload_file.scientist_name %></td>
                 <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
-                <td><%= upload_file.description %></td>
+                <td><%= upload_file.file_type %></td>
                 <td>
                   <% if upload_file.file.attached? %>
                     <%= link_to 'Download', url_for(upload_file.file), method: :get, class: "btn btn-success btn-sm", target: '_blank' %>
