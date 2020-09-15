@@ -45,7 +45,7 @@
               <tr>
                 <td><%= upload_file.institute.institute_centre_type if upload_file.institute.present? %></td>
                 <td><%= upload_file.institute.institute_centre_name if upload_file.institute.present? %></td>
-                <td><%= upload_file.discipline %></td>
+                <td><%= upload_file.upload_type %></td>
                 <td><%= upload_file.title %></td>
                 <td><%= upload_file.location %></td>
                 <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
