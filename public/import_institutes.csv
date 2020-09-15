@@ -1,0 +1,78 @@
+discipline,institute_centre_type,institute_centre_name,location,address,mobile_number,email,name,password
+Research,RARS,Palem,Palem,Palem,08540-228646,rars_palem@pjtsau.edu.net,rars_palem,password
+Research,RARS,Warangal,Warangal,Warangal,0870-2100236,rars_warangal,rars_warangal,password
+Research,RARS,Jagtial,Jagtial,"Polasa, Jagtial 505 529 ",08724-277281,rars_jagtial,rars_jagtial,password
+Research,RARS,Rudrur,Rudrur,"Rudrur, Nizamabad- 503 188 ",08467-284024,,rars_rudrur,password
+Research,ARS,Rajendranagar,Rajendranagar,Rangareddy - 500 030,040-24015324,,ars_rajendranagar,password
+Research,ARS,Tandur ,Tandur ,"Tandur - Vikarabad, 501 141",0,,ars_tandur ,password
+Research,ARS,Kampasagar,Kampasagar,"Kampasagar, Babusaipeta Post, TripuraramMandal, Nalgonda",08689-238866,,ars_kampasagar,password
+Research,ARS,Madhira,Madhira,"Madhira, Khammam - 507 203",08749-274235,,ars_madhira,password
+Research,ARS,Basanthpur,Basanthpur,"Mamidigi, NyalkalMandal, Medak - 502 249",0,,ars_basanthpur,password
+Research,ARS,Nathnaipally,Nathnaipally,"Narsapur, Medak - 502 313 ",0,,ars_nathnaipally,password
+Research,ARS,Tornala,Tornala,Siddipeta,0,,ars_tornala,password
+Research,ARS,Karimnagar,Karimnagar,Karimnagar - 505 002,08728-2000605,,ars_karimnagar,password
+Research,ARS,Kunaram,Kunaram,Peddapalli - 505172,08728- 200328,,ars_kunaram,password
+Research,ARS,Adilabad,Adilabad,Adilabad 504 002,08732-226863,,ars_adilabad,password
+Research,ARS,Mudhole,Mudhole,Mudhole 504 102,07852-244243,,ars_mudhole,password
+Research,AICRP,Investigation on Soil Test Crop Response Correlation,"ARI, Rajendranagar","ARI, Rajendranagar, Hyderabad - 500 030",040 -24001601,,aicrp_istcpc,password
+Research,AICRP,Micro and Secondary Nutrients and Pollutant elements in Soils and Plants,"ARI, Rajendranagar","ARI, Rajendranagar, Hyderabad - 500 030",0,,aicrp_msnpesp,password
+Research,AICRP,Forage Crops and Utilization,"ARI, Rajendranagar","ARI, Rajendranagar, Hyderabad - 500 030",0,,aicrp_fcu,password
+Research,AICRP,Biological Control ,"ARI, Rajendranagar","ARI, Rajendranagar, Hyderabad - 500 030",0,,aicrp_bc,password
+Research,AICRP,Agro-Forestry,Rajendranagar,"Rajendranagar, Hyderabad - 500 030",040-24010116,,aicrp_af,password
+Research,AICRP,Weed Management,Rajendranagar,"Diamond Jubilee Block, Rajendranagar, Hyderabad - 500 030",040-24017205,,aicrp_wm,password
+Research,AICRP,Integrated Farming Systems,Rajendranagar,"Diamond Jubilee Block, Rajendranagar, Hyderabad - 500 030",040-24017463,,aicrp_ifs,password
+Research,AICRP,Home Science,Rajendranagar,"Post Graduate Research Centre, Rajendranagar, Hyderabad - 500 030",040-24011263,,aicrp_hsc,password
+Research,AINP,Vertebrate Pest Management,Rajendranagar,"Rajendranagar, Hyderabad - 500 030",040-24015754,,ainp_vpm,password
+Research,AINP,Pesticide Residues,Rajendranagar,"EEI Premises Rajendranagar,Hyderabad - 500 030",040-64508191,,ainp_pr,password
+Research,Other,Rice Research Centre,Rajendranagar,"ARI, Rajendranagar, Rangareddy 500 030",040- 24015817,,res_rrc,password
+Research,Other,Farm Implements and Machinery Scheme,Rajendranagar,"ARI, Rajendranagar, Rangareddy 500 030",040-20026277,,res_fimc,password
+Research,Other,Radio Tracer Laboratory,Rajendranagar,"ARI, Rajendranagar, Rangareddy 500 030",040-24014404,,res_rtl,password
+Research,Other,Agro Climate Research Centre,Rajendranagar,"ARI, Rajendranagar, Rangareddy 500 030",040-24016901,,res_acrc,password
+Research,Other,Quality Control Lab,Rajendranagar,"EEI campus Rajendranagar , Hyderabad - 500 030",040-24013456,,res_qcl,password
+Research,Other,Seed Research and Technology Centre,Rajendranagar,"Rajendranagar, Hyderabad - 500 030",040-24015382,,res_srtc,password
+Research,Other,Water Technology Centre,Rajendranagar,"Diamond Jubilee Block , Rajendranagar Hyderabad - 500 030",040-24001445,,res_wtc,password
+Research,Other,Institute of Biotechnology,Rajendranagar,"Rajendranagar, Hyderabad 500 030",040-24015011-17,,res_ibt,password
+Research,Other,Mushroom Cultivation Scheme,Rajendranagar,"College of Agriculture, Rajendranagar, Hyderabad - 500 030",040-24015011,,res_mcs,password
+Research,Other,Cost of Cultivation Scheme,Rajendranagar,"College of Agriculture, Rajendranagar, Hyderabad - 500 030",0,,res_ccs,password
+Research,Other,Maize Research Centre,Rajendranagar,"ARI, Rajendranagar, Hyderabad - 500 030", 040-24018447,,res_msc1,password
+Extension,DAATTC,"DAATTC, Rangareddy",Tandur,"ARS, Tandur",0,,daattcc_rangareddy,password
+Extension,DAATTC,"DAATTC, Nalgonda",Yadadri Bhuvanagiri,Yadadri Bhuvanagiri,0,,daattcc_nalgonda,password
+Extension,DAATTC,"DAATTC, Mahaboobnagar",Palem,"RARS, Palem",0,,daattcc_mahaboobnagar,password
+Extension,DAATTC,"DAATTC, Warangal",Warangal,"RARS, Warangal",0,,daattcc_warangal,password
+Extension,DAATTC,"DAATTC, Khammam",Tornala,"ARS, Tornala",0,,daattcc_khammam,password
+Extension,DAATTC,"DAATTC, Sangareddy",Jogipet,"APT, Jogipet",0,,daattcc_sangareddy,password
+Extension,DAATTC,"DAATTC, Adilabad",Mudhol,"ARS, Mudhol",0,,daattcc_adilabad,password
+Extension,DAATTC,"DAATTC, Nizamabad",Malthummeda,"APT, Malthummeda",0,,daattcc_nizamabad,password
+Extension,DAATTC,"DAATTC, Karimnagar",Karimnagar,"ARS, Karimnagar",0,,daattcc_karimnagar,password
+Extension,KVK,"KVK, Rudrur",Rudrur,"Rudrur, Nizamabad - 503 188",9986923830,kvkrdr@gmail.com,kvk_rudrur,password
+Extension,KVK,"KVK, Adilabad",Adilabad,Adilabad - 504 002,9986923829,kvkadilabadpc@gmail.com,kvk_adilabad,password
+Extension,KVK,"KVK, Bellampalli",Bellampalli,"Bellampalli, Mancherial Dist 504 251",9100229854,kvkbellampalli@gmail.com,kvk_bellampalli,password
+Extension,KVK,"KVK, Malyal",Malyal,Mahabubabad dist - 506 101,9849988231,kvk.wgl@gmail.com,kvk_malyal,password
+Extension,KVK,"KVK, Wyra",Wyra,"Wyra, Khammam Dist 507 165",9986923831,wyrakvkinfo2@gmail.com,kvk_wyra,password
+Extension,KVK,"KVK, Kothagudem",Kothagudem,Bhadradri Kothagudem District,998633364,kvkkothagudem@gmail.com,kvk_kothagudem,password
+Extension,KVK,"KVK, Palem",Palem,"Palem, Nagarkurnool Dist",7702366110,kvk_palem@gmail.com,kvk_palem,password
+Extension,KVK,"KVK, Kampasagar",Kampasagar,Kampasagar,7702544771,kvkkampasagar2011@gmail.com,kvk_kampasagar,password
+Extension,EEI,Extension Education Institute,Rajendranagar,Rajendranagar,8008808024,eei1962@gmail.com,eei_rnagar,password
+Extension,AICC,Agricultural Information and Communication Centre and ATIC,Rajendranagar,"ARI Campus, Rajendrangara",9986925242,pjtsau.paio@gmail.com,aicc_pjtsau,password
+Teaching,UG/PG,College of Agriculture,Rajendranagar,Rajendranagar Hyderabad,0,,ca_rajendranagar,password
+Teaching,UG/PG,College of Agriculture,Aswaraopeta ,Aswaraopeta ,0,,ca_aswaraopeta ,password
+Teaching,UG/PG,College of Agriculture,Jagtial,Jagtial,0,,ca_jagtial,password
+Teaching,UG ,College of Agriculture,Palem,Palem,0,,ca_palem,password
+Teaching,UG ,College of Agriculture,Warangal,Warangal,0,,ca_warangal,password
+Teaching,UG ,College of Agriculture,Siricilla,Siricilla,0,,ca_siricilla,password
+Teaching,UG/PG,College of Community Science,Saifabad,Hyderabad,0,,ccs_saifabad,password
+Teaching,UG/PG,The College of Food Science and Technology,Rudrur,Nizamabad,0,,cftr_rudrur,password
+Teaching,UG/PG,College of Agricultural Engineering,Sangareddy,Sangareddy,0,,cae_kandi,password
+Teaching,Diploma,"Agricultural Polytechnic, Palem",Palem,"Regional Agricultural Research Station, Palem – 509 215, Nagarkurnool District",0,adr_palem@rediffmail.com 1,apt_palem,password
+Teaching,Diploma,"Agricultural Polytechnic, Jagtial",Jagtial,"Regional Agricultural Research Station, Polasa, Jagtial District,- 505529",0,aptjgl@yahoo.com,apt_jagtial,password
+Teaching,Diploma,"Agricultural Polytechnic, Kampasagar",Kampasagar,"Agricultural Research Station, Kampasagar – 508 207 Nalgonda",0,headarsmlg@rediffmail.com,apt_kampasagar,password
+Teaching,Diploma,"Agricultural Polytechnic, Basanthpur",Basanthpur,"Agricultural Research Station, Basanthpur,-502 249, Manidgi, Nyalkal mandal, Sangareddy District",0,"apt.basanthpur@gmail.com,ars.medak@gmail.com",apt_basanthpur,password
+Teaching,Diploma,"Agricultural Polytechnic, Warangal ",Warangal,"Regional Agricultural Research Station, Warangal – 506 007 Warangal urban Dist",0,principalaptwarangal@gmail.com,apt_warangal,password
+Teaching,Diploma,"Agricultural Polytechnic, Madhira",Madhira,"Agricultural Research Station, Madhira – 507 203, Khammam Dist",0,arsmadhira@gmail.com,apt_madhira,password
+Teaching,Diploma,"Agricultural Polytechnic, Jogipet ",Jogipet,"Agricultural Research Station, Sangupet village, Jogipet mandal – 502 273, Sangareddy District",0,sukruthdr.ag@gmail.com,apt_jogipet,password
+Teaching,Diploma,"Agricultural Polytechnic, Jammikunta",Jammikunta,"Jammikunta 505 122, Karimnagar Dist",0,principalaptjmkt@gmail.com,apt_jammikunta,password
+Teaching,Diploma,"Agricultural Polytechnic, Malthummeda ",Malthummeda,"Malthummeda (v), Nagireddipet (m), Kamareddy Dist",0,vpaptmalt@gmail.com,apt_malthumeda,password
+Teaching,Diploma,"Agricultural Polytechnic, Tornala ",Tornala ,"Tornala (v), Siddipet (Rural) Mandal, Siddipet Dist,-502114",0,"apttornala@gmail.com, sallaramsr@yahoo.com",apt_tormala,password
+Teaching,Diploma,"Agricultural Polytechnic, Sirisilla",Siricilla,"Sardarpur (v), Siricilla (m), Rajannasircilla Dist 505 301",0,aptsircilla@gmail.com,apt_sirisilla,password
+Teaching,Diploma,"Seed Technology Polytechnic, Rudrur",Rudrur,"Regional Sugarcane & Rice Research Station, Rudrur – 503 188, Nizamabad Dist",8467284333,rsrrs.head@gmail.com stprudrur@gmail.com,apt_rudrur,password
+Teaching,Diploma,Agricultural Engineering Polytechnic Institute of Agricultural Engineering & Technology,Rajendranagar,"College of Agriculture, Rajendranagar, Hyderabad 500 030",040-24015011,"paernr@gmail.com,",iaet_rnagar,password
