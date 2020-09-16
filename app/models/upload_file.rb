@@ -27,7 +27,7 @@ class UploadFile < ApplicationRecord
         #   errors.add(:file, 'The image oversize limited (5MB)')
         end
       elsif self.file_type == 'Video'
-        if !file.blob.content_type.in?(%w(avi flv mkv video/x-matroska mov mp4))
+        if !file.blob.content_type.in?(%w(avi flv mkv video/x-matroska mov mp4 video/mp4 video/mkv))
           file.purge_later
           errors.add(:file, 'format incorrect')
         end

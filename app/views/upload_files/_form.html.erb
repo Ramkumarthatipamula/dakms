@@ -58,7 +58,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.select(:file_type, ["Video", "Audio", "Image", "PDF", "Word"], { include_blank: 'File Type' }, { :class => 'form-control check_video', :required => true, disabled: @upload_file.id ? true : false }) %>
+    <%= form.select(:file_type, ["Video", "Audio", "Image", "PDF", "Word","Alet Messages"], { include_blank: 'File Type' }, { :class => 'form-control check_video', :required => true, disabled: @upload_file.id ? true : false }) %>
   </div><br>
 
   <div class="field">
