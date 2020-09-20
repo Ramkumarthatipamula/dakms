@@ -29,6 +29,7 @@
               <th>Type of Institute</th>
               <th>Institute/Centre Name</th>
               <th>Discipline</th>
+              <th>Crop</th>
               <th>Title</th>
               <th>Location</th>
               <th>Date</th>
@@ -46,6 +47,7 @@
                 <td><div class="title1"><%= upload_file.institute.institute_centre_type if upload_file.institute.present? %></div></td>
                 <td><div class="title1"><%= upload_file.institute.institute_centre_name if upload_file.institute.present? %></div></td>
                 <td><%= upload_file.upload_type %></td>
+                <td><%= upload_file.crop %></td>
                 <td><div class="title"><%= upload_file.title %></div></td>
                 <td><%= upload_file.location %></td>
                 <td><div class="title"><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></div></td>
@@ -98,7 +100,7 @@ $(document).ready( function () {
   }
   table.dataTable tbody td .date_text {
     word-break: break-word;
-    min-width: 100px;
+    min-width: 120px;
     vertical-align: top;
   }
 </style>

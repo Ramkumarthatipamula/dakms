@@ -12,17 +12,15 @@
   <% end %><br>
 
   <div class="field">
-    <%#= form.label "Activity Type" %>
     <%#= form.text_field :upload_type, :class => 'form-control' %>
-    <% if @name != 'Activity' %>
-      <%= form.select(:upload_type, ["Crop improvement", "Crop production", "Crop protection", "Natural Resource Management", "Social Sciences", "Soil & Water Engineering", "Agricultural Processing", "Bioenergy", "Farm Power and Machinery", "Soil and water conservation", "Horticulture", "Community science", "Agricultural Engineering", "Food science and Technology", "Fisheries/Animal sciences", "Other"], { include_blank: 'Select Discipline' }, { :class => 'form-control', placeholder: 'Activity Type', :required => true }) %>
-    <% else %>
-      <% upload_types = current_user.discipline == 'Teaching' ? ["Student Ready Programme", "Village Adoption", "Chenu Kaburlu", "Workshops/Guest Lecturers", "Personality Development", "NSS/Harithaharam", "Others"] : ["Minikit Testing", "OFTs", "OFDs", "FLDs", "Diagnostic filed visits", "Kisan Melas", "Formaers Training", "Extension Studies/Success Stories", "Other"] %>
-      <%= form.select(:upload_type, upload_types, { include_blank: 'Activity type' }, { :class => 'form-control', placeholder: 'Activity Type', :required => true }) %>
-    <% end %>
+    <%= form.select(:upload_type, ["Crop Production", "Plant Protection", "Agricultural  Extension", "Horticulture", "Home Science", "Veterinary", "Transfer of Technology", "Others"], { include_blank: 'Project type' }, { :class => 'form-control', placeholder: 'Project Type', :required => true }) %>
   </div><br>
 
   <%= form.hidden_field :name, :value => @name %>
+  
+  <div class="field">
+    <%= form.select(:crop, ["Rice", "Sesamum", "Maize", "Sugarcane", "Soybean", "Cotton", "Desi Cotton", "Dryland Crops", "Pulses", "Jowar", "Wheat", "Bio Fuel  Crops", "Pogamia", "Seemaruba", "Sunflower", "Castor", "Minor Millets", "Groundnut", "Redgram", "Safflower", "Rabi Sorgum"], { include_blank: 'Select any Crop' }, { :class => 'form-control', placeholder: 'Select any Crop', :required => true }) %>
+  </div><br>
 
   <div class="field">
     <%#= form.label "Title of the Activity" %>
@@ -41,21 +39,18 @@
 
   <div class="field">
     <%= form.text_field :date, class: 'form-control datepicker', value: (@upload_file.date.strftime("%d-%m-%Y") if @upload_file.date.present?), placeholder: 'Conducted Date', autocomplete: "off" %><br />
-
     <%#= form.text_field :date, :class => 'form-control datepicker', value: (form.object.date.strftime("%d-%m-%Y") if form.object.date.present?), placeholder: 'Activity Conducted Date', :required => true, 'data-date-format' => "mm/dd/yyyy" %>
   </div>
 
-  <% if @name != 'Activity' %>
-    <div class="field">
-      <%#= form.label :scientist_name %>
-      <%= form.text_field :scientist_name, :class => 'form-control', placeholder: 'Scientist Name', :required => true %>
-    </div><br>
+  <div class="field">
+    <%#= form.label :scientist_name %>
+    <%= form.text_field :scientist_name, :class => 'form-control', placeholder: 'Scientist Name', :required => true %>
+  </div><br>
 
-    <div class="field">
-      <%#= form.label "Scientist Email ID" %>
-      <%= form.email_field :scientist_id, :class => 'form-control', placeholder: 'Scientist Email ID', :required => true %>
-    </div><br>
-  <% end %>
+  <div class="field">
+    <%#= form.label "Scientist Email ID" %>
+    <%= form.email_field :scientist_id, :class => 'form-control', placeholder: 'Scientist Email ID', :required => true %>
+  </div><br>
 
   <div class="field">
     <%= form.select(:file_type, ["Video", "Audio", "Image", "PDF", "Word","Alet Messages"], { include_blank: 'File Type' }, { :class => 'form-control check_video', :required => true, disabled: @upload_file.id ? true : false }) %>

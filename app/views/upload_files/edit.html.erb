@@ -2,7 +2,12 @@
   <div class="item">
     <div class="col-8">
       <h3>Editing <%= params[:name] %></h3>
-      <%= render 'form', upload_file: @upload_file, button_name: "Update" %>
+      <% if @name == 'Activity' %>
+        <%= render 'activity_form', upload_file: @upload_file, button_name: "Update" %>
+      <% else %>
+        <%= render 'project_form', upload_file: @upload_file, button_name: "Update" %>
+      <% end %>
+
     </div>
   </div>
 </div>

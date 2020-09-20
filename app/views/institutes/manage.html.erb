@@ -6,6 +6,9 @@
           <tr>
             <th>S.No.</th>
             <th>Discipline</th>
+            <% if current_user.discipline != 'Teaching' %>
+              <th>Crop</th>
+            <% end %>
             <th>Title</th>
             <th>Description</th>
             <th>Location</th>
@@ -25,6 +28,9 @@
             <tr>
               <td><%= index+1 %></td>
               <td><%= upload_file.upload_type %></td>
+              <% if current_user.discipline != 'Teaching' %>
+                <td><%= upload_file.crop %></td>
+              <% end %>
               <td><div class="title"><%= upload_file.title %></div></td>
               <td><div class="title"><%= upload_file.description %></div></td>
               <td><%= upload_file.location %></td>

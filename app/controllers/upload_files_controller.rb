@@ -125,6 +125,6 @@ class UploadFilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def upload_file_params
-      params.require(:upload_file).permit(:upload_type, :name, :title, :description, :location, :date, :scientist_name, :scientist_id, :status, :archive, :upload_data_id, :institute_id, :file, :file_type, :duration_of_video)
+      params.require(:upload_file).permit(:upload_type, :name, :title, :crop, :description, :location, :date, :scientist_name, :scientist_id, :status, :archive, :upload_data_id, :institute_id, :file, :file_type, :duration_of_video)
     end
 end

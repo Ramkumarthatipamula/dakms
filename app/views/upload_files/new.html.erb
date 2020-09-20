@@ -2,7 +2,11 @@
   <div class="item">
     <div class="col-8">
       <h3>Upload <%= @name %></h3>
-      <%= render 'form', upload_file: @upload_file, button_name: "Upload" %>
+      <% if @name == 'Activity' %>
+        <%= render 'activity_form', upload_file: @upload_file, button_name: "Upload" %>
+      <% else %>
+        <%= render 'project_form', upload_file: @upload_file, button_name: "Upload" %>
+      <% end %>
     </div>
   </div>
 </div>

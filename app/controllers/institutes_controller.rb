@@ -74,7 +74,7 @@ class InstitutesController < ApplicationController
   def dashboard
     if params[:name].present?
       @upload_files = UploadFile.where(name: params[:name], institute_id: current_user.id).where.not(status: "Approved")
-    elsif current_user.discipline == 'Teaching'
+    elsif current_user.discipline != 'Extension'
       @upload_files = UploadFile.where(institute_id: current_user.id).where.not(status: "Approved")
     end
   end

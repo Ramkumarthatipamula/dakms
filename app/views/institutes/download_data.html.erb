@@ -31,10 +31,13 @@
           <thead>
             <tr>
               <th>S.No:</th>
-              <% if current_user.discipline == 'Teaching' %>
+              <% if current_user.discipline != 'Extension' %>
                 <th>Activity Type</th>
               <% else %>
                 <th>Project/Activity</th>
+              <% end %>
+              <% if current_user.discipline != 'Teaching' %>
+                <th>Crop</th>
               <% end %>
               <th>Title</th>
               <th>Location</th>
@@ -49,13 +52,16 @@
             <% @upload_files.each_with_index do |upload_file, index| %>
               <tr>
                 <td><%= index+1 %></td>
-                <td><%= upload_file.upload_type %></td>
+                <td><div class="activity-type"><%= upload_file.upload_type %></div></td>
+                <% if current_user.discipline != 'Teaching' %>
+                  <td><%= upload_file.crop %></td>
+                <% end %>
                 <td><div class="title"><%= upload_file.title %></div></td>
                 <td><%= upload_file.location %></td>
-                <td><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
+                <td><div class="date_text"><%= upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></div></td>
                 <td><%= upload_file.scientist_name %></td>
-                <td><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></td>
-                <td><%= upload_file.file_type %></td>
+                <td><div class="date_text"><%= upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y") %></div></td>
+                <td><div class="date_text"><%= upload_file.file_type %></div></td>
                 <td>
                   <% if upload_file.file.attached? %>
                     <%= link_to 'Download', url_for(upload_file.file), method: :get, class: "btn btn-success btn-sm", target: '_blank' %>
@@ -96,6 +102,11 @@ $(document).ready( function () {
   table.dataTable tbody td .date_text {
     word-break: break-word;
     min-width: 100px;
+    vertical-align: top;
+  }
+  table.dataTable tbody td .activity-type {
+    word-break: break-word;
+    min-width: 120px;
     vertical-align: top;
   }
 </style>
