@@ -77,14 +77,28 @@ class InstitutesController < ApplicationController
     elsif current_user.discipline != 'Extension'
       @upload_files = UploadFile.where(institute_id: current_user.id).where.not(status: "Approved")
     end
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data(UploadFile.generate_csv(@upload_files), filename: "#{Date.today}.csv")
+      end
+    end
   end
 
   def download_data
-    @users = User.where(type: "Institute")
+    # @users = User.where(type: "Institute")
     if params[:type].present? && params[:user_id].present?
       @upload_files = UploadFile.where(status: "Approved", name: params[:type], institute_id: params[:user_id])
     elsif current_user.type == "Institute"
       @upload_files = UploadFile.where(status: "Approved", institute_id: current_user.id)
+    end
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data(UploadFile.generate_csv(@upload_files), filename: "#{Date.today}.csv")
+      end
     end
   end
 
@@ -95,6 +109,13 @@ class InstitutesController < ApplicationController
         @upload_files = UploadFile.where(name: params[:name], institute_id: current_user.id)
       else
         @upload_files = UploadFile.where(name: params[:name])
+      end
+    end
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data(UploadFile.generate_csv(@upload_files), filename: "#{Date.today}.csv")
       end
     end
   end
