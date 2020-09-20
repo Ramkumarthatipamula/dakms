@@ -15,6 +15,13 @@ class ElectronicWingController < ApplicationController
     # end
     # if params[:type].present? && params[:user_id].present?
       @upload_files = UploadFile.where(status: 'Pending').includes(:institute)
+
+      respond_to do |format|
+        format.html
+        format.csv do
+          send_data(UploadFile.generate_csv(@upload_files), filename: "#{Date.today}.csv")
+        end
+      end
     # end
   end
 
@@ -26,6 +33,13 @@ class ElectronicWingController < ApplicationController
     #   @upload_files = UploadFile.where(status: "Approved", institute_id: current_user.id)
     # end
     @upload_files = UploadFile.where(status: "Approved").includes(:institute)
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data(UploadFile.generate_csv(@upload_files), filename: "#{Date.today}.csv")
+      end
+    end
   end
 
   def rejected_data
@@ -34,6 +48,13 @@ class ElectronicWingController < ApplicationController
     #   @upload_files = UploadFile.where(status: "Rejected", name: params[:type], institute_id: params[:user_id]).includes(:institute)
     # end
     @upload_files = UploadFile.where(status: "Rejected").includes(:institute)
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data(UploadFile.generate_csv(@upload_files), filename: "#{Date.today}.csv")
+      end
+    end
   end
 
 end

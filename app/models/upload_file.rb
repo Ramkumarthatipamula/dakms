@@ -1,3 +1,4 @@
+require 'csv'
 class UploadFile < ApplicationRecord
   # validates :discipline, presence: true
   validates :upload_type, presence: true
@@ -47,4 +48,19 @@ class UploadFile < ApplicationRecord
       errors.add(:file, 'The file required.')
     end
   end
+
+  def self.generate_csv(upload_files)
+    attributes = ['Type of Institute', 'Institute/Centre Name', 'Discipline', 'Crop', 'Title', 'Location', 'Date', 'Scientist', 'Posted Date', ' Description', 'File Type', 'Video Duration', 'Status']
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      upload_files.each do |upload_file|
+        type = upload_file.institute.institute_centre_type if upload_file.institute.present?
+        name = upload_file.institute.institute_centre_name if upload_file.institute.present?
+
+        csv << [ type, name, upload_file.upload_type, upload_file.crop, upload_file.title, upload_file.location, upload_file.date.in_time_zone("Kolkata").strftime("%d-%m-%Y"), upload_file.scientist_name, upload_file.created_at.in_time_zone("Kolkata").strftime("%d-%m-%Y"), upload_file.description, upload_file.file_type, upload_file.duration_of_video, upload_file.status ]
+      end
+    end
+  end
+
 end
