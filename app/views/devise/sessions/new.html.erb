@@ -79,6 +79,7 @@
             <div class="actions text-center">
               <br>
               <%= f.submit "Log in", class: 'btn btn-secondary' %>
+              <button type="button" class="btn btn-warning" style="background-color: #e0a800 !important; border-color: #e0a800 !important;" data-toggle="modal" data-target="#myModal">About</button>
             </div>
           <% end %>
         </div>
@@ -94,6 +95,89 @@
       <h3>Developed by Electronic Wing, ARI, Rajendranagar.</h3>
     </div>
   </div> -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">About</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <h4>Vision:<h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-11">
+              <small style="">To act as a mechanism in harnessing the power of Research , Extension and Teaching  system of  PJTSAU  through dynamic partnership and convergence to improve knowledge and skill  of farmers.</small>
+            </div>
+          </div><br>
+          <div class="row">
+            <div class="col-12">
+              <h4>Features:<h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <small style="">Centralized data (Images/Audio/Video) repository system </small>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-11">
+              <small style="">Links all PJTSAU institutions for data repository </small>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-11">
+              <small style="">Real time Agricultural Knowledge repository to access and manage knowledge </small>
+            </div>
+          </div><br>
+          <div class="row">
+            <div class="col-12">
+              <h4>Outcome:<h4>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <small style="">It creates a knowledge and technology data repository by establishing foster linkage between Extension, Research and Teaching  </small>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-11">
+              <small style="">It provides /stores knowledge and derives new knowledge from existing knowledge  </small>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-11">
+              <small style="">To provide support for future strategy formulation in digitalization of Extension services to farmers </small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- /.modal -->
 </div>
 <%#= render "devise/shared/links" %>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.about').on('click', function () {
+      $('#addClientModal').modal('show')
+    })
+  })
+</script>
+<style media="screen">
+.modal-dialog {
+  width: 750px;
+  max-width: 750px;
+}
+</style>
