@@ -13,11 +13,11 @@
 
   <div class="field">
     <%#= form.text_field :upload_type, :class => 'form-control' %>
-    <%= form.select(:upload_type, ["Crop Production", "Plant Protection", "Agricultural  Extension", "Horticulture", "Home Science", "Veterinary", "Transfer of Technology", "Others"], { include_blank: 'Project type' }, { :class => 'form-control', placeholder: 'Project Type', :required => true }) %>
+    <%= form.select(:upload_type, ["GOI", "ICAR", "SAU/PJTSAU", "State Government", "International agency", "NGOs", "Private firms", "Others"], { include_blank: 'Project type' }, { :class => 'form-control', placeholder: 'Project Type', :required => true }) %>
   </div><br>
 
   <%= form.hidden_field :name, :value => @name %>
-  
+
   <div class="field">
     <%= form.select(:crop, ["Rice", "Sesamum", "Maize", "Sugarcane", "Soybean", "Cotton", "Desi Cotton", "Dryland Crops", "Pulses", "Jowar", "Wheat", "Bio Fuel  Crops", "Pogamia", "Seemaruba", "Sunflower", "Castor", "Minor Millets", "Groundnut", "Redgram", "Safflower", "Rabi Sorgum"], { include_blank: 'Select any Crop' }, { :class => 'form-control', placeholder: 'Select any Crop', :required => true }) %>
   </div><br>
