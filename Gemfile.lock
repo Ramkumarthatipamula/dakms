@@ -82,6 +82,7 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
+    ffi (1.12.2-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -111,8 +112,11 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.9-x86-mingw32)
+      mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     pg (1.2.3)
+    pg (1.2.3-x86-mingw32)
     popper_js (1.16.0)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -191,6 +195,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2020.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.8)
@@ -208,6 +214,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   active_storage-send_zip
