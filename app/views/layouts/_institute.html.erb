@@ -46,16 +46,16 @@
                 </a>
               </li>
               <%# if current_user.discipline == 'Extension' %>
-                <li>
+              <!-- <li>
                   <a href="#">
                   <span class="icon">
                     <!-- <i class="fa fa-upload" aria-hidden="true"></i> -->
-                  </span>
+                <!--   </span>
                     <span class="list">Projects</span>
                   </a>
-                </li>
-                <li>
-                  <a href="<%= new_upload_file_path(name: "Project") %>" class="<%= params[:action] == 'new' &&  params[:controller] == 'upload_files' && params[:name] == 'Project' ? 'active' : '' %>">
+                </li> -->
+                <!-- <li> --%>
+                  <a href="<%#= new_upload_file_path(name: "Project") %>" class="<%#= params[:action] == 'new' &&  params[:controller] == 'upload_files' && params[:name] == 'Project' ? 'active' : '' %>">
                     <span class="icon">
                       <i class="fa fa-upload mg-lf-30" aria-hidden="true"></i>
                     </span>
@@ -63,13 +63,13 @@
                   </a>
                 </li>
                 <li>
-                  <a href="<%= institute_activities_manage_path(name: "Project") %>" class="<%= params[:action] == 'manage' &&  params[:controller] == 'institutes' && params[:name] == 'Project' ? 'active' : '' %>">
+                <a href="<%#= institute_activities_manage_path(name: "Project") %>" class="<%#= params[:action] == 'manage' &&  params[:controller] == 'institutes' && params[:name] == 'Project' ? 'active' : '' %>">
                     <span class="icon">
                       <i class="fa fa-pencil-square-o mg-lf-30" aria-hidden="true"></i>
                     </span>
                     <span class="list">Manage</span>
                   </a>
-                </li>
+                </li> -->
               <%# end %>
               <li>
                 <a href="#">
