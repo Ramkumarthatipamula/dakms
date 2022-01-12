@@ -12,7 +12,7 @@
 # ------------------------------------
 server '3.108.73.220',user: 'deployer', roles: [:web, :app, :db], primary: true
 
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/eC2-University-test-server-pjtsau-university) }
+# set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/eC2-University-test-server-pjtsau-university) }
 
 set :branch, 'master'
 set :rails_env, 'staging'

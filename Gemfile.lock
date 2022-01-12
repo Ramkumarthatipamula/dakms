@@ -58,6 +58,7 @@ GEM
     autoprefixer-rails (10.4.0.0)
       execjs (~> 2)
     bcrypt (3.1.16)
+    bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootstrap (5.0.2)
       autoprefixer-rails (>= 9.1.0)
@@ -94,6 +95,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    ed25519 (1.2.4)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -231,6 +233,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage-send_zip
+  bcrypt_pbkdf (>= 1.0, < 2.0)
   bootstrap (~> 5.0.0.alpha1)
   bootstrap-datepicker-rails!
   byebug
@@ -240,6 +243,7 @@ DEPENDENCIES
   capistrano-rvm
   coffee-rails (~> 4.2)
   devise
+  ed25519 (>= 1.2, < 2.0)
   jbuilder (~> 2.5)
   jquery-datatables
   jquery-rails
