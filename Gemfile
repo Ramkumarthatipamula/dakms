@@ -68,3 +68,12 @@ gem 'zip-zip' # will load compatibility for old rubyzip API.
 
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+group :development do
+  gem 'capistrano', require: false
+  # gem 'capistrano3-puma', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  # gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano-rvm', require: false
+  # gem 'capistrano-sidekiq'
+end
