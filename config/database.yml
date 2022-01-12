@@ -37,16 +37,16 @@ test:
   pool: 10
   timeout: 5000
 
+  # staging:
+  #   adapter: postgresql
+  #   host: "localhost"
+  #   username: "root123"
+  #   password: "root"
+  #   database: dakms_dev_staging
+  #   reconnect: true
+  #   pool: 10
+  #   timeout: 5000
 # old production database added to staging
-# staging:
-#   adapter: postgresql
-#   host: "localhost"
-#   username: "root123"
-#   password: "root"
-#   database: dakms_dev_staging
-#   reconnect: true
-#   pool: 10
-#   timeout: 5000
 
 
 # old staging
