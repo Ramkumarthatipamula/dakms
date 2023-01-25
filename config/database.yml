@@ -1,8 +1,8 @@
 development:
   adapter: postgresql
   host: "localhost"
-  username: deployer
-  password: deployer
+  username: root123
+  password: root
   database: dakms_dev
   reconnect: true
   pool: 10
