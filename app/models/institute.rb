@@ -5,6 +5,7 @@ class Institute < User
   validates :location, presence: true
   validates :address, presence: true
   validates :mobile_number, presence: true
+  # validates :name, uniqueness: true
   validates :password, presence: true
   validates :password, length: {minimum: 6}, allow_blank: true
   validates :name, presence: true, uniqueness: { case_sensitive: false }
