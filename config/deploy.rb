@@ -29,6 +29,7 @@ set :linked_files, [
    ]
 
 set :linked_dirs, %w{log public/system}
+append :linked_dirs, 'log', 'storage', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'node_modules'
 
 # sidekiq serach for given queue names
 # set :sidekiq_queue, ['default', 'mailer', 'mailers']
